@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@brmorillo/global-locations",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Public global locations library",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
