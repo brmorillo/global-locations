@@ -1,4 +1,4 @@
-import data from '../data/countries_states_cities.json';
+import { locations } from '../data/json';
 import {
   City,
   Country,
@@ -7,7 +7,7 @@ import {
 } from '../interfaces/locations.interface';
 
 export class Locations {
-  private static data: LocationData = data;
+  private static data: LocationData = locations;
 
   /**
    * !Attention: The return is big.
