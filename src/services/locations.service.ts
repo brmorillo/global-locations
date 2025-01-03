@@ -83,4 +83,25 @@ export class Locations {
     const state = country?.states.find((s) => s[field] === value);
     return state?.cities;
   }
+
+  /* public static search(
+    level: 'countries' | 'states' | 'cities',
+    field: string,
+    value: string | number
+  ): any {
+    const data = this.getData();
+    if (level === 'countries') {
+      return data.find((country) => country[field] === value);
+    }
+    if (level === 'states') {
+      return data.flatMap((country) => country.states).find((state) => state[field] === value);
+    }
+    if (level === 'cities') {
+      return data
+        .flatMap((country) => country.states)
+        .flatMap((state) => state.cities)
+        .find((city) => city[field] === value);
+    }
+    throw new Error('Invalid level');
+  } */
 }

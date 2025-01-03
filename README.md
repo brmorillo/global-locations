@@ -1,15 +1,25 @@
-# Global States and Municipalities List
+# Global Locations Library
 
 This repository provides a unified and structured JSON file containing global country, state, and municipality data. It serves as a public and open-source reference for developers, researchers, and anyone interested in geographical data.
 
 ---
+
+## Índice
+- [Instalação](#instalação)
+- [Estrutura do JSON](#json-structure)
+- [Uso](#usage)
+- [Fontes](#sources)
+- [Contribuição](#contribution)
+- [Licença](#license)
+- [Disclaimer](#disclaimer)
+
 
 ## Installation
 
 To use this package in your project, install it via npm:
 
 ```bash
-npm install global-states-and-municipes
+npm install @brmorillo/global-location
 ```
 
 ---
@@ -82,7 +92,7 @@ After installing the package, you can import it into your project as follows:
 ### Example
 
 ```typescript
-import countriesStatesCities, { countries } from 'global-states-and-municipes';
+import countriesStatesCities, { countries } from '@brmorillo/global-location';
 
 // Full dataset
 console.log('Full JSON:', countriesStatesCities);
@@ -122,7 +132,7 @@ We have cross-referenced and merged these sources to ensure accuracy and complet
 
 Contributions to expand the dataset or improve its structure are welcome! Here's how you can contribute:
 
-1. **Report Issues:** If you find any errors or missing data, please [open an issue](https://github.com/seu-usuario/global-states-and-municipes/issues).
+1. **Report Issues:** If you find any errors or missing data, please [open an issue](https://github.com/brmorillo/global-location/issues).
 2. **Submit Pull Requests:** Add new data or propose enhancements by submitting a pull request.
 3. **Add Data for Other Countries:** Help us expand the dataset by contributing data for countries not yet included.
 
