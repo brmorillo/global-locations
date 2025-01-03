@@ -155,25 +155,3 @@ This project is licensed under the MIT License. Feel free to use and adapt the d
 This dataset is for informational purposes only. While we strive for accuracy, we cannot guarantee the correctness of all details. Always cross-reference with official sources for critical applications.
 
 ---
-
-## Recommendation: Use `@brmorillo/utils`
-
-To enhance your data filtering and searching capabilities, consider using the `@brmorillo/utils` library. This utility library provides powerful and reusable functions for array and object manipulations.
-
-### Installation
-
-Install the library via npm or yarn:
-
-```bash
-npm install @brmorillo/utils
-# or
-yarn add @brmorillo/utils
-```
-
-### Example Usage
-
-You can use the `ArrayUtils.findSubset` function to filter datasets or the `ObjectUtils.findValue` function to search for specific values within objects.
-
-These utilities can simplify your data processing tasks and improve code readability.
-
----
