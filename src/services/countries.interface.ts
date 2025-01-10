@@ -1,7 +1,7 @@
 export interface City {
+  id: number;
   stateId: number;
   name: string;
-  code: number;
 }
 
 export interface State {
