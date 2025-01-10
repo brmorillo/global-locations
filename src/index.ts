@@ -1,11 +1,7 @@
-// Export individual utilities para ESM direto
-export * from './services/locations.service';
+import { Countries } from './services/countries.service';
 
-// Export default como um único objeto
-import * as locations from './services/locations.service';
-
-const Locations = {
-  ...locations,
+export const Utils = {
+  Countries: Countries,
 };
 
-export default Locations;
+export { Countries as ValidationUtils } from './services/countries.service';
