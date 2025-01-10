@@ -1,3 +1,7 @@
+# [1.0.0](https://github.com/brmorillo/util/compare/v0.4.0...v1.0.0) (2025-01-10)
+
+
+
 # [0.4.0](https://github.com/brmorillo/util/compare/v0.2.6...v0.4.0) (2025-01-10)
 
 
