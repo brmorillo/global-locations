@@ -1,167 +1,251 @@
-# Global Locations Library
+# @brmorillo/utils
 
-This repository provides a unified and structured JSON file containing global country, state, and municipality data. It serves as a public and open-source reference for developers, researchers, and anyone interested in geographical data.
+## Project Description
+
+**@brmorillo/utils** is a TypeScript utility library designed to simplify common tasks by providing efficient and reusable implementations. It works seamlessly in both Node.js and browser environments.
 
 ---
 
-## Índice
-- [Instalação](#instalação)
-- [Estrutura do JSON](#json-structure)
-- [Uso](#usage)
-- [Fontes](#sources)
-- [Contribuição](#contribution)
-- [Licença](#license)
-- [Disclaimer](#disclaimer)
+## Installation and Usage
 
+### Install
 
-## Installation
-
-To use this package in your project, install it via npm:
+To add the library to your project, use:
 
 ```bash
-npm install @brmorillo/global-location
+npm install @brmorillo/utils
 ```
 
----
+or if you use Yarn:
 
-## JSON Structure
-
-The JSON file is structured to support multiple countries, with the following format:
-
-```json
-{
-  "countries": [
-    {
-      "id": "BR",
-      "name": "Brasil",
-      "acronym": "BR",
-      "capital": "Brasília",
-      "coin": "Real",
-      "coinCode": "BRL",
-      "regionGroup": "Americas",
-      "economicGroups": ["Mercosul", "UNASUL"],
-      "continent": "South America",
-      "ddi": "55",
-      "coi": "BRA",
-      "fifa": "BRA",
-      "iso-3": "BRA",
-      "iso-2": "BR",
-      "states": [
-        {
-          "id": 12,
-          "name": "Acre",
-          "acronym": "AC",
-          "cities": [
-            {
-              "stateId": 12,
-              "name": "Acrelândia",
-              "code": 1200013
-            },
-            ...
-          ]
-        },
-        ...
-      ]
-    },
-    ...
-  ]
-}
+```bash
+yarn add @brmorillo/utils
 ```
 
-### Main Fields:
+or with pnpm:
 
-- **countries**: An array of countries.
-- **id**: The country code.
-- **name**: Full name of the country.
-- **acronym**: Abbreviation or acronym of the country.
-- **capital**: Capital city.
-- **coin**: Official currency.
-- **coinCode**: ISO currency code.
-- **regionGroup**: The larger geographical or economic region the country belongs to.
-- **economicGroups**: Economic groups the country is a member of.
-- **continent**: Continent.
-- **ddi**: International dialing code.
-- **states**: An object where each key is a state ID, containing details about states and their cities.
+```bash
+pnpm add @brmorillo/utils
+```
 
----
+### Usage
 
-## Usage
-
-After installing the package, you can import it into your project as follows:
-
-### Example
+#### Import the specific utilities you need:
 
 ```typescript
-import countriesStatesCities, { countries } from '@brmorillo/global-location';
+import { ArrayUtils, MathUtils, StringUtils } from '@brmorillo/utils';
 
-// Full dataset
-console.log('Full JSON:', countriesStatesCities);
-
-// List of countries
-console.log('Countries:', countries);
-
-// Access specific data
-const brazil = countries.find((country) => country.id === 'BR');
-console.log('Brazil:', brazil);
+// Example usage
+console.log(ArrayUtils.removeDuplicates({ array: [1, 2, 2, 3] })); // [1, 2, 3]
+console.log(MathUtils.roundToDecimals({ value: 3.14159, decimals: 2 })); // 3.14
+console.log(StringUtils.capitalizeFirstLetter({ input: 'hello' })); // "Hello"
 ```
 
-### Applications:
+#### Or import the entire library:
 
-- Geographical data visualization.
-- Address validation or autocomplete.
-- Integration in services and APIs.
-- Educational and research purposes.
+```typescript
+import Utils from '@brmorillo/utils';
 
----
-
-## Sources
-
-The data for Brazil in this repository has been compiled from trusted public sources, including:
-
-1. [IBGE Data](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)
-2. [Leogermani - estados-e-municipios-ibge](https://github.com/leogermani/estados-e-municipios-ibge)
-3. [Letanure - Gist](https://gist.github.com/letanure/3012978)
-4. [Wikipedia - Listas de municípios do Brasil por população](https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Brasil_por_popula%C3%A7%C3%A3o)
-5. [Wikipedia - Comparação entre códigos de países COI, FIFA, e ISO 3166](https://pt.wikipedia.org/wiki/Compara%C3%A7%C3%A3o_entre_c%C3%B3digos_de_pa%C3%ADses_COI,_FIFA,_e_ISO_3166)
-
-We have cross-referenced and merged these sources to ensure accuracy and completeness.
+console.log(Utils.ArrayUtils.removeDuplicates({ array: [1, 2, 3, 3] })); // [1, 2, 3]
+console.log(Utils.MathUtils.randomInRange({ min: 5, max: 10 })); // Random value between 5 and 10
+```
 
 ---
 
-## Contribution
+## Project Features
 
-Contributions to expand the dataset or improve its structure are welcome! Here's how you can contribute:
+### Array Utility Functions
 
-1. **Report Issues:** If you find any errors or missing data, please [open an issue](https://github.com/brmorillo/global-location/issues).
-2. **Submit Pull Requests:** Add new data or propose enhancements by submitting a pull request.
-3. **Add Data for Other Countries:** Help us expand the dataset by contributing data for countries not yet included.
+1. **`removeDuplicates`**: Removes duplicate values from an array.
+2. **`intersect`**: Finds the intersection of two arrays.
+3. **`flatten`**: Flattens a multi-dimensional array into a single-dimensional array.
+4. **`groupBy`**: Groups elements of an array based on a grouping function.
+5. **`shuffle`**: Shuffles the elements of an array randomly.
+6. **`findSubset`**: Finds the first object in an array where the subset matches the superset.
+7. **`isSubset`**: Checks if a subset object is fully contained within a superset object.
 
-### Steps to Contribute:
+### Conversion Utility Functions
 
-1. Fork the repository.
-2. Create a new branch for your changes:
+1. **`convertSpace`**: Converts values between different units of space.
+2. **`convertWeight`**: Converts values between different units of weight.
+3. **`convertVolume`**: Converts values between different units of volume.
+4. **`convertValue`**: Converts values between `string`, `number`, and `bigint`.
+
+### Cryptography Utility Functions
+
+1. **`encrypt`**: Encrypts a string value using bcrypt.
+2. **`compare`**: Compares a string value with an encrypted hash.
+3. **`generateRandomString`**: Generates a random string using bcrypt.
+
+### Date Utility Functions
+
+1. **`now`**: Returns the current date and time.
+2. **`createInterval`**: Creates an interval between two dates.
+3. **`addTime`**: Adds a specific duration to a date.
+4. **`removeTime`**: Subtracts a specific duration from a date.
+5. **`diffBetween`**: Calculates the difference between two dates.
+6. **`toUTC`**: Converts a date to UTC.
+7. **`toTimeZone`**: Converts a date to a specified timezone.
+
+### Math Utility Functions
+
+1. **`roundToDecimals`**: Rounds a number to the specified number of decimal places.
+2. **`calculatePercentage`**: Calculates the percentage of a value.
+3. **`gcd`**: Finds the greatest common divisor of two numbers.
+4. **`lcm`**: Finds the least common multiple of two numbers.
+5. **`randomInRange`**: Generates a random number within a range.
+6. **`clamp`**: Clamps a number within a range.
+
+### Number Utility Functions
+
+1. **`isEven`**: Checks if a number is even.
+2. **`isOdd`**: Checks if a number is odd.
+3. **`roundDown`**: Rounds a number down to the nearest integer.
+4. **`roundUp`**: Rounds a number up to the nearest integer.
+5. **`roundToNearest`**: Rounds a number to the nearest integer.
+6. **`toCents`**: Converts a number to cents.
+7. **`addDecimalPlaces`**: Adds decimal places to a number.
+8. **`removeDecimalPlaces`**: Removes decimal places from a number.
+9. **`randomIntegerInRange`**: Generates a random integer within a range.
+10. **`factorial`**: Calculates the factorial of a number.
+11. **`clamp`**: Clamps a number within a range.
+12. **`isPrime`**: Checks if a number is a prime.
+
+### Object Utility Functions
+
+1. **`findValue`**: Finds a value in an object by a specified key or path.
+2. **`deepClone`**: Creates a deep clone of an object.
+3. **`deepMerge`**: Deeply merges two objects.
+4. **`pick`**: Picks specific keys from an object.
+5. **`omit`**: Omits specific keys from an object.
+6. **`flattenObject`**: Flattens a nested object into a single level.
+7. **`invert`**: Inverts the keys and values of an object.
+8. **`deepFreeze`**: Deeply freezes an object, making it immutable.
+9. **`compare`**: Deeply compares two objects for equality.
+10. **`groupBy`**: Groups the keys of an object based on a callback function.
+11. **`diff`**: Finds the difference between two objects.
+12. **`unflattenObject`**: Sets a value in a nested object by a dot-separated path.
+
+### Request Utility Functions
+
+1. **`extractRequestData`**: Extracts relevant data from an HTTP request object.
+
+### Snowflake Utility Functions
+
+1. **`generate`**: Generates a Snowflake ID using a custom epoch.
+2. **`decode`**: Deconstructs a Snowflake ID into its components.
+3. **`getTimestamp`**: Extracts the timestamp from a Snowflake ID.
+
+### Sorting Algorithms Utility Functions
+
+1. **`bubbleSort`**: Implements Bubble Sort with a time complexity of O(n²) in the worst case.
+2. **`mergeSort`**: Implements Merge Sort with a time complexity of O(n log n).
+3. **`quickSort`**: Implements Quick Sort with a time complexity of O(n log n) on average.
+4. **`heapSort`**: Implements Heap Sort with a time complexity of O(n log n).
+5. **`selectionSort`**: Implements Selection Sort with a time complexity of O(n²).
+6. **`insertionSort`**: Implements Insertion Sort, efficient for small or nearly sorted datasets.
+7. **`shellSort`**: Implements Shell Sort with an average time complexity of O(n log² n).
+8. **`countingSort`**: Implements Counting Sort, effective for integers with limited range.
+9. **`radixSort`**: Implements Radix Sort for non-negative integers, processing digits or characters.
+10. **`bucketSort`**: Implements Bucket Sort, dividing the array into buckets and sorting each.
+11. **`timSort`**: Combines Merge Sort and Insertion Sort, used in Python and Java.
+12. **`bogoSort`**: Implements Bogo Sort, an inefficient and impractical sorting algorithm.
+13. **`gnomeSort`**: Implements Gnome Sort, a variation of Insertion Sort with O(n²) complexity.
+14. **`pancakeSort`**: Implements Pancake Sort, flipping subarrays to sort.
+15. **`combSort`**: An improved version of Bubble Sort using larger initial gaps.
+16. **`cocktailShakerSort`**: A bi-directional Bubble Sort that eliminates turtles.
+17. **`bitonicSort`**: Optimized for parallel systems, with O(n log² n) complexity.
+18. **`stoogeSort`**: An academic curiosity with O(n².7095) complexity.
+
+### String Utility Functions
+
+1. **`capitalizeFirstLetter`**: Capitalizes the first letter of a string.
+2. **`reverseString`**: Reverses a string.
+3. **`isPalindrome`**: Checks if a string is a palindrome.
+4. **`truncateString`**: Truncates a string to a specified length.
+5. **`toKebabCase`**: Converts a string to kebab-case.
+6. **`toSnakeCase`**: Converts a string to snake_case.
+7. **`countOccurrences`**: Counts the occurrences of a substring.
+
+### Validation Utility Functions
+
+1. **`isValidEmail`**: Validates if a string is a valid email address.
+2. **`isValidURL`**: Validates if a string is a valid URL.
+3. **`isValidPhoneNumber`**: Validates if a string is a valid phone number.
+4. **`isNumber`**: Checks if a value is a number.
+5. **`isValidHexColor`**: Validates if a string is a hexadecimal color.
+6. **`hasMinLength`**: Checks if a string has a minimum length.
+7. **`isValidJSON`**: Validates if a string is a JSON.
+
+---
+
+## Contribution Guidelines
+
+### How to Contribute
+
+1. **No direct commits to the `main` branch:**
+   All development must be done in separate branches.
+
+2. **Branch naming:**
+   Use descriptive names for your branches. Examples:
+
+   - `feat/new-feature`
+   - `fix/login-error`
+
+3. **Pull Requests:**
+
+   - Every pull request (PR) must be reviewed and approved before merging into `main`.
+   - Ensure you follow the commit message standards.
+
+4. **Commit Messages:**
+   Follow the project's commit message conventions (based on Angular):
+   - `feat: description of the new feature`
+   - `fix: description of the bug fix`
+   - `docs: documentation updates`
+
+### How to Publish
+
+If you want to contribute and publish updates to this library:
+
+1. **Bump the version:**
+   Use the following command to update the version according to [SemVer](https://semver.org/):
+
    ```bash
-   git checkout -b feature/new-data
+   npm version patch   # For small fixes
+   npm version minor   # For new features
+   npm version major   # For breaking changes
    ```
-3. Make your changes and commit:
+
+2. **Publish the package:**
    ```bash
-   git commit -m "Add new country/state/city data"
+   npm publish
    ```
-4. Push your branch and submit a pull request:
-   ```bash
-   git push origin feature/new-data
-   ```
+
+Feel free to fork, contribute, and submit pull requests! Any contributions are welcome.
+
+---
+
+## 🫶 Support the Project
+
+If you find **@brmorillo/utils** helpful and want to support its development, consider contributing! Your support is essential for the project to grow.
+
+### 📌 How to Contribute
+
+- **Pix**:
+  Use the Pix key: **bruno@rmorillo.com**
+
+- **Cryptocurrencies**:
+
+  - **Dogecoin (DOGE):** `DLwW5LFfXV7wN7a7dVV6TX7kiomVnYABXM`
+  - **Tether (USDT):** `0x2b1f5169e3719E0A25850a178db54d8D1C0c12E0`
+  - **Bitcoin (BTC):** `bc1qk5cakfryrx8dw3w6uqudwkpm9apvd6h5mgl8kg`
+  - **Ethereum (ETH):** `0x2b1f5169e3719E0A25850a178db54d8D1C0c12E0`
+
+- **Other ways:**
+  Feedback, code contributions, or simply sharing the project with others are extremely appreciated!
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use and adapt the data, but kindly credit this repository and the original sources when applicable.
-
----
-
-### Disclaimer
-
-This dataset is for informational purposes only. While we strive for accuracy, we cannot guarantee the correctness of all details. Always cross-reference with official sources for critical applications.
-
----
+This project is licensed under the MIT License. See the LICENSE file for details.

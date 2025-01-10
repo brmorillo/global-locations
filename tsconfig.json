@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
     "module": "ESNext",
-    "target": "ES2021",
-    "outDir": "./dist/esm",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
