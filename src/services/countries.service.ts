@@ -1,86 +1,71 @@
 import { countriesData } from '../data';
-import { Country, State } from './countries.interface';
+import { City, Country, State } from './countries.interface';
 
 export class Countries {
-  // Tornando os dados estáticos para serem acessados pelos métodos estáticos
+  // Dados estáticos de países
   private static countries: Country[] = countriesData.countries;
 
+  // Função auxiliar para buscar um país
+  private static findCountryByProperty(
+    property: keyof Country,
+    value: string,
+  ): Country | undefined {
+    return this.countries.find((country) => country[property] === value);
+  }
+
   /**
-   * !Attention: This method returns all countries and their data, including states.
-   * @returns {Country[]} - All countries and their data
+   * Retorna todos os países com seus dados completos (incluindo estados).
+   * @returns {Country[]} - Todos os países e seus dados.
    */
   public static getAllCountriesAndData(): Country[] {
     return this.countries;
   }
 
   /**
-   * This method returns all countries without the 'states' property.
-   * The 'states' property is omitted to return only the basic country data.
-   * @returns {Omit<Country, 'states'>[]} - All countries without states
+   * Retorna todos os países sem a propriedade 'states'.
+   * @returns {Omit<Country, 'states'>[]} - Países sem estados.
    */
   public static getAllCountries(): Omit<Country, 'states'>[] {
     return this.countries.map(({ states, ...countryData }) => countryData);
   }
 
   /**
-   * This method searches for a country by a specific property (id, name, etc.) and its value.
-   * @param {Object} params - Object containing the property and value to search by.
-   * @param {string} params.property - Property of the country to compare (id, name, etc.).
-   * @param {string} params.value - Value to compare with the country property.
-   * @returns {Omit<Country, 'states'> | undefined} - The country found without 'states' or 'undefined' if no match is found.
+   * Retorna um país pelo valor de uma propriedade (id, nome, etc.).
+   * @param {Object} params - Parâmetros de busca (propriedade e valor).
+   * @param {string} params.property - Propriedade do país para buscar.
+   * @param {string} params.value - Valor da propriedade para a busca.
+   * @param {boolean} params.selectStates - Indica se deve incluir estados.
+   * @returns {Omit<Country, 'states'> | Country | undefined} - País encontrado ou 'undefined' se não encontrado.
    */
   public static getCountryBy({
     property,
     value,
     selectStates = false,
   }: {
-    property:
-      | 'id'
-      | 'name'
-      | 'acronym'
-      | 'capital'
-      | 'coin'
-      | 'coinCode'
-      | 'regionGroup'
-      | 'continent'
-      | 'ddi';
+    property: keyof Country;
     value: string;
     selectStates: boolean;
-  }): Country | Omit<Country, 'states'> | undefined {
-    // Find the country based on the property and value
-    const country = this.countries.find(
-      (country) => country[property] === value,
-    );
-
-    // If the country is found, return it without the 'states' property
+  }): Omit<Country, 'states'> | Country | undefined {
+    const country = this.findCountryByProperty(property, value);
     if (!country) return undefined;
 
-    if (selectStates) {
-      return country;
-    }
-
-    const { states, ...countryData } = country;
-    return countryData;
+    return selectStates ? country : { ...country, states: undefined };
   }
 
   /**
-   * !Attention: This method returns all states from all countries.
-   * @returns {State[]} - All states from all countries.
+   * Retorna todos os estados de todos os países.
+   * @returns {State[]} - Todos os estados de todos os países.
    */
   public static getAllStates(): State[] {
-    return this.countries.flatMap((country) => country.states);
+    return this.countries.flatMap((country) => country.states || []);
   }
 
   /**
-   * This method searches for a country by its ID and returns the country with its states.
-   * @param countryId - The ID of the country to search for.
-   * @returns {State[] | undefined} - The states of the country or 'undefined' if no match is found.
+   * Retorna os estados de um país específico.
+   * @param {string} countryId - ID do país.
+   * @returns {State[] | undefined} - Estados do país ou 'undefined' se não encontrado.
    */
-  public static getStatesByCountryId({
-    countryId,
-  }: {
-    countryId: string;
-  }): State[] | undefined {
+  public static getStatesByCountryId(countryId: string): State[] | undefined {
     const country = this.getCountryBy({
       property: 'id',
       value: countryId,
@@ -95,36 +80,27 @@ export class Countries {
   }
 
   /**
-   * This method searches for a specific state by a property (id, name, etc.) and its value.
-   * @param {Object} params - Object containing the property and value to search by.
-   * @param {string} params.countryId - The ID of the country to search for the state.
-   * @param {string} params.property - Property of the state to compare (id, name, etc.).
-   * @param {string} params.value - Value to compare with the state property.
-   * @returns {State | undefined} - The state found or 'undefined' if no match is found.
+   * Busca um estado de um país com base em um parâmetro (id, nome, etc.).
+   * @param {string} countryId - ID do país.
+   * @param {object} params - Parâmetros para busca do estado (id, nome, etc.).
+   * @returns {State | undefined} - Estado encontrado ou 'undefined'.
    */
   public static getStateByParams({
     countryId,
     params,
   }: {
     countryId: string;
-    params: { property: 'id' | 'name' | 'acronym'; value: string };
+    params: { property: keyof State; value: string };
   }): State | undefined {
-    const statesList = this.getStatesByCountryId({ countryId });
-
-    if (statesList) {
-      return statesList.find(
-        (state) => state[params.property] === params.value,
-      );
-    }
-
-    return undefined;
+    const statesList = this.getStatesByCountryId(countryId);
+    return statesList?.find((state) => state[params.property] === params.value);
   }
 
   /**
-   * This method checks if a state is within a specific country.
-   * @param {String} countryId - The ID of the country to search for the state.
-   * @param {String} stateId - The ID of the state to search for.
-   * @returns {Boolean} - 'true' if the state is within the country, 'false' otherwise.
+   * Verifica se um estado pertence a um país específico.
+   * @param {string} countryId - ID do país.
+   * @param {string} stateId - ID do estado.
+   * @returns {boolean} - 'true' se o estado pertencer ao país, 'false' caso contrário.
    */
   public static isStateInCountry({
     countryId,
@@ -139,38 +115,30 @@ export class Countries {
       selectStates: true,
     });
 
-    // Verifica se o país existe e se contém estados
-    if (country && 'states' in country) {
-      // Verifica se o estadoId está entre os estados do país
-      const stateIds = country.states.map((state) => state.id);
-      return stateIds.includes(Number(stateId));
-    }
+    if (!country || !('states' in country)) return false;
 
-    return false;
+    return (
+      country?.states?.some((state) => state.id === Number(stateId)) ?? false
+    );
   }
 
   /**
-   * !Attention: This method returns all cities from all states from the countries.
-   * @param {String} countryId - The ID of the country.
-   * @returns {string[]} - All cities from all states from all countries.
+   * Retorna todas as cidades de todos os estados de um país.
+   * @param {string} countryId - ID do país.
+   * @returns {string[]} - Lista de nomes de todas as cidades.
    */
   public static getAllCities({ countryId }: { countryId: string }): string[] {
-    const statesList = this.getStatesByCountryId({ countryId });
-
-    if (statesList) {
-      return statesList.flatMap((state) =>
-        state.cities.map((city) => city.name),
-      );
-    }
-
-    return [];
+    const statesList = this.getStatesByCountryId(countryId);
+    return statesList
+      ? statesList.flatMap((state) => state.cities.map((city) => city.name))
+      : [];
   }
 
   /**
-   * This method searches for a specific city by a property (id, name, etc.) and its value.
-   * @param {String} countryId - The ID of the country to search for the city.
-   * @param {String} cityId - The ID of the city to search for.
-   * @returns {String | undefined} - The city found or 'undefined' if no match is found.
+   * Retorna todas as cidades de um estado específico dentro de um país.
+   * @param {string} countryId - ID do país.
+   * @param {string} stateId - ID do estado.
+   * @returns {string[]} - Lista de nomes de cidades do estado.
    */
   public static getCitiesByStateId({
     countryId,
@@ -179,27 +147,17 @@ export class Countries {
     countryId: string;
     stateId: string;
   }): string[] {
-    const statesList = this.getStatesByCountryId({ countryId });
-
-    if (statesList) {
-      const state = statesList.find((state) => state.id === Number(stateId));
-
-      if (state) {
-        return state.cities.map((city) => city.name);
-      }
-    }
-
-    return [];
+    const statesList = this.getStatesByCountryId(countryId);
+    const state = statesList?.find((state) => state.id === Number(stateId));
+    return state?.cities.map((city) => city.name) ?? [];
   }
 
   /**
-   * This method searches for a specific city by a property (id, name, etc.) and its value.
-   * @param {String} countryId - The ID of the country to search for the city.
-   * @param {String} stateId - The ID of the state to search for the city.
-   * @param {Object} params - Object containing the property and value to search by.
-   * @param {String} params.property - Property of the city to compare (id, name, etc.).
-   * @param {String} params.value - Value to compare with the city property.
-   * @returns {String | undefined} - The city found or 'undefined' if no match is found.
+   * Busca uma cidade específica por parâmetro dentro de um estado e país.
+   * @param {string} countryId - ID do país.
+   * @param {string} stateId - ID do estado.
+   * @param {object} params - Parâmetros de busca da cidade (id, nome, etc.).
+   * @returns {string | undefined} - Nome da cidade ou 'undefined' se não encontrada.
    */
   public static getCitiesByParams({
     countryId,
@@ -208,25 +166,12 @@ export class Countries {
   }: {
     countryId: string;
     stateId: string;
-    params: { property: 'id' | 'name'; value: string };
+    params: { property: keyof City; value: string };
   }): string | undefined {
-    const statesList = this.getStatesByCountryId({ countryId });
+    const statesList = this.getStatesByCountryId(countryId);
+    const state = statesList?.find((state) => state.id === Number(stateId));
 
-    if (statesList) {
-      // Find the state by stateId
-      const state = statesList.find((state) => state.id === Number(stateId));
-
-      if (state) {
-        // Use ArrayUtils.findSubset for city search if applicable
-        const city = state.cities.find(
-          (city) => city[params.property] === params.value,
-        );
-
-        // Return the city's name if found
-        return city?.name;
-      }
-    }
-
-    return undefined;
+    return state?.cities.find((city) => city[params.property] === params.value)
+      ?.name;
   }
 }
