@@ -1,8 +1,8 @@
-# @brmorillo/utils
+# @brmorillo/global-locations
 
 ## Project Description
 
-**@brmorillo/utils** is a TypeScript utility library designed to simplify common tasks by providing efficient and reusable implementations. It works seamlessly in both Node.js and browser environments.
+**@brmorillo/global-locations** is a TypeScript library designed to simplify access and manipulation of hierarchical location data, including countries, states, and cities. It offers powerful methods for retrieving, filtering, and managing location-based information.
 
 ---
 
@@ -13,169 +13,132 @@
 To add the library to your project, use:
 
 ```bash
-npm install @brmorillo/utils
+npm install @brmorillo/global-locations
 ```
 
 or if you use Yarn:
 
 ```bash
-yarn add @brmorillo/utils
+yarn add @brmorillo/global-locations
 ```
 
 or with pnpm:
 
 ```bash
-pnpm add @brmorillo/utils
+pnpm add @brmorillo/global-locations
 ```
 
 ### Usage
 
-#### Import the specific utilities you need:
+#### Import the `Countries` class to access location utilities:
 
 ```typescript
-import { ArrayUtils, MathUtils, StringUtils } from '@brmorillo/utils';
+import { Countries } from '@brmorillo/global-locations';
 
 // Example usage
-console.log(ArrayUtils.removeDuplicates({ array: [1, 2, 2, 3] })); // [1, 2, 3]
-console.log(MathUtils.roundToDecimals({ value: 3.14159, decimals: 2 })); // 3.14
-console.log(StringUtils.capitalizeFirstLetter({ input: 'hello' })); // "Hello"
-```
+const countries = Countries.getAllCountriesAndData();
+console.log(countries);
 
-#### Or import the entire library:
+const states = Countries.getStatesByCountryId('BR');
+console.log(states);
 
-```typescript
-import Utils from '@brmorillo/utils';
-
-console.log(Utils.ArrayUtils.removeDuplicates({ array: [1, 2, 3, 3] })); // [1, 2, 3]
-console.log(Utils.MathUtils.randomInRange({ min: 5, max: 10 })); // Random value between 5 and 10
+const cities = Countries.getCitiesByStateId({ countryId: 'BR', stateId: '35' });
+console.log(cities);
 ```
 
 ---
 
 ## Project Features
 
-### Array Utility Functions
+### Country Utility Functions
 
-1. **`removeDuplicates`**: Removes duplicate values from an array.
-2. **`intersect`**: Finds the intersection of two arrays.
-3. **`flatten`**: Flattens a multi-dimensional array into a single-dimensional array.
-4. **`groupBy`**: Groups elements of an array based on a grouping function.
-5. **`shuffle`**: Shuffles the elements of an array randomly.
-6. **`findSubset`**: Finds the first object in an array where the subset matches the superset.
-7. **`isSubset`**: Checks if a subset object is fully contained within a superset object.
+1. **`getAllCountriesAndData`**: Retrieves all countries with their associated states and cities.
 
-### Conversion Utility Functions
+   ```typescript
+   const countries = Countries.getAllCountriesAndData();
+   console.log(countries);
+   ```
 
-1. **`convertSpace`**: Converts values between different units of space.
-2. **`convertWeight`**: Converts values between different units of weight.
-3. **`convertVolume`**: Converts values between different units of volume.
-4. **`convertValue`**: Converts values between `string`, `number`, and `bigint`.
+2. **`getAllCountries`**: Retrieves all countries without the `states` property.
 
-### Cryptography Utility Functions
+   ```typescript
+   const countries = Countries.getAllCountries();
+   console.log(countries);
+   ```
 
-1. **`encrypt`**: Encrypts a string value using bcrypt.
-2. **`compare`**: Compares a string value with an encrypted hash.
-3. **`generateRandomString`**: Generates a random string using bcrypt.
+3. **`getCountryBy`**: Finds a country by a specific property (e.g., `id`, `name`, etc.).
+   ```typescript
+   const country = Countries.getCountryBy({
+     property: 'id',
+     value: 'BR',
+     selectStates: true,
+   });
+   console.log(country);
+   ```
 
-### Date Utility Functions
+### State Utility Functions
 
-1. **`now`**: Returns the current date and time.
-2. **`createInterval`**: Creates an interval between two dates.
-3. **`addTime`**: Adds a specific duration to a date.
-4. **`removeTime`**: Subtracts a specific duration from a date.
-5. **`diffBetween`**: Calculates the difference between two dates.
-6. **`toUTC`**: Converts a date to UTC.
-7. **`toTimeZone`**: Converts a date to a specified timezone.
+1. **`getAllStates`**: Retrieves all states from all countries.
 
-### Math Utility Functions
+   ```typescript
+   const states = Countries.getAllStates();
+   console.log(states);
+   ```
 
-1. **`roundToDecimals`**: Rounds a number to the specified number of decimal places.
-2. **`calculatePercentage`**: Calculates the percentage of a value.
-3. **`gcd`**: Finds the greatest common divisor of two numbers.
-4. **`lcm`**: Finds the least common multiple of two numbers.
-5. **`randomInRange`**: Generates a random number within a range.
-6. **`clamp`**: Clamps a number within a range.
+2. **`getStatesByCountryId`**: Retrieves all states for a specific country.
 
-### Number Utility Functions
+   ```typescript
+   const states = Countries.getStatesByCountryId('BR');
+   console.log(states);
+   ```
 
-1. **`isEven`**: Checks if a number is even.
-2. **`isOdd`**: Checks if a number is odd.
-3. **`roundDown`**: Rounds a number down to the nearest integer.
-4. **`roundUp`**: Rounds a number up to the nearest integer.
-5. **`roundToNearest`**: Rounds a number to the nearest integer.
-6. **`toCents`**: Converts a number to cents.
-7. **`addDecimalPlaces`**: Adds decimal places to a number.
-8. **`removeDecimalPlaces`**: Removes decimal places from a number.
-9. **`randomIntegerInRange`**: Generates a random integer within a range.
-10. **`factorial`**: Calculates the factorial of a number.
-11. **`clamp`**: Clamps a number within a range.
-12. **`isPrime`**: Checks if a number is a prime.
+3. **`getStateByParams`**: Finds a state by specific parameters (e.g., `id`, `name`, etc.).
 
-### Object Utility Functions
+   ```typescript
+   const state = Countries.getStateByParams({
+     countryId: 'BR',
+     params: { property: 'name', value: 'São Paulo' },
+   });
+   console.log(state);
+   ```
 
-1. **`findValue`**: Finds a value in an object by a specified key or path.
-2. **`deepClone`**: Creates a deep clone of an object.
-3. **`deepMerge`**: Deeply merges two objects.
-4. **`pick`**: Picks specific keys from an object.
-5. **`omit`**: Omits specific keys from an object.
-6. **`flattenObject`**: Flattens a nested object into a single level.
-7. **`invert`**: Inverts the keys and values of an object.
-8. **`deepFreeze`**: Deeply freezes an object, making it immutable.
-9. **`compare`**: Deeply compares two objects for equality.
-10. **`groupBy`**: Groups the keys of an object based on a callback function.
-11. **`diff`**: Finds the difference between two objects.
-12. **`unflattenObject`**: Sets a value in a nested object by a dot-separated path.
+4. **`isStateInCountry`**: Checks if a state belongs to a specific country.
+   ```typescript
+   const isInCountry = Countries.isStateInCountry({
+     countryId: 'BR',
+     stateId: '35',
+   });
+   console.log(isInCountry);
+   ```
 
-### Request Utility Functions
+### City Utility Functions
 
-1. **`extractRequestData`**: Extracts relevant data from an HTTP request object.
+1. **`getAllCities`**: Retrieves all cities for a specific country.
 
-### Snowflake Utility Functions
+   ```typescript
+   const cities = Countries.getAllCities({ countryId: 'BR' });
+   console.log(cities);
+   ```
 
-1. **`generate`**: Generates a Snowflake ID using a custom epoch.
-2. **`decode`**: Deconstructs a Snowflake ID into its components.
-3. **`getTimestamp`**: Extracts the timestamp from a Snowflake ID.
+2. **`getCitiesByStateId`**: Retrieves all cities for a specific state within a country.
 
-### Sorting Algorithms Utility Functions
+   ```typescript
+   const cities = Countries.getCitiesByStateId({
+     countryId: 'BR',
+     stateId: '35',
+   });
+   console.log(cities);
+   ```
 
-1. **`bubbleSort`**: Implements Bubble Sort with a time complexity of O(n²) in the worst case.
-2. **`mergeSort`**: Implements Merge Sort with a time complexity of O(n log n).
-3. **`quickSort`**: Implements Quick Sort with a time complexity of O(n log n) on average.
-4. **`heapSort`**: Implements Heap Sort with a time complexity of O(n log n).
-5. **`selectionSort`**: Implements Selection Sort with a time complexity of O(n²).
-6. **`insertionSort`**: Implements Insertion Sort, efficient for small or nearly sorted datasets.
-7. **`shellSort`**: Implements Shell Sort with an average time complexity of O(n log² n).
-8. **`countingSort`**: Implements Counting Sort, effective for integers with limited range.
-9. **`radixSort`**: Implements Radix Sort for non-negative integers, processing digits or characters.
-10. **`bucketSort`**: Implements Bucket Sort, dividing the array into buckets and sorting each.
-11. **`timSort`**: Combines Merge Sort and Insertion Sort, used in Python and Java.
-12. **`bogoSort`**: Implements Bogo Sort, an inefficient and impractical sorting algorithm.
-13. **`gnomeSort`**: Implements Gnome Sort, a variation of Insertion Sort with O(n²) complexity.
-14. **`pancakeSort`**: Implements Pancake Sort, flipping subarrays to sort.
-15. **`combSort`**: An improved version of Bubble Sort using larger initial gaps.
-16. **`cocktailShakerSort`**: A bi-directional Bubble Sort that eliminates turtles.
-17. **`bitonicSort`**: Optimized for parallel systems, with O(n log² n) complexity.
-18. **`stoogeSort`**: An academic curiosity with O(n².7095) complexity.
-
-### String Utility Functions
-
-1. **`capitalizeFirstLetter`**: Capitalizes the first letter of a string.
-2. **`reverseString`**: Reverses a string.
-3. **`isPalindrome`**: Checks if a string is a palindrome.
-4. **`truncateString`**: Truncates a string to a specified length.
-5. **`toKebabCase`**: Converts a string to kebab-case.
-6. **`toSnakeCase`**: Converts a string to snake_case.
-7. **`countOccurrences`**: Counts the occurrences of a substring.
-
-### Validation Utility Functions
-
-1. **`isValidEmail`**: Validates if a string is a valid email address.
-2. **`isValidURL`**: Validates if a string is a valid URL.
-3. **`isValidPhoneNumber`**: Validates if a string is a valid phone number.
-4. **`isNumber`**: Checks if a value is a number.
-5. **`isValidHexColor`**: Validates if a string is a hexadecimal color.
-6. **`hasMinLength`**: Checks if a string has a minimum length.
-7. **`isValidJSON`**: Validates if a string is a JSON.
+3. **`getCitiesByParams`**: Finds a city by specific parameters (e.g., `id`, `name`).
+   ```typescript
+   const city = Countries.getCitiesByParams({
+     countryId: 'BR',
+     stateId: '35',
+     params: { property: 'name', value: 'São Paulo' },
+   });
+   console.log(city);
+   ```
 
 ---
 
@@ -190,7 +153,7 @@ console.log(Utils.MathUtils.randomInRange({ min: 5, max: 10 })); // Random value
    Use descriptive names for your branches. Examples:
 
    - `feat/new-feature`
-   - `fix/login-error`
+   - `fix/location-error`
 
 3. **Pull Requests:**
 
@@ -227,7 +190,7 @@ Feel free to fork, contribute, and submit pull requests! Any contributions are w
 
 ## 🫶 Support the Project
 
-If you find **@brmorillo/utils** helpful and want to support its development, consider contributing! Your support is essential for the project to grow.
+If you find **@brmorillo/global-locations** helpful and want to support its development, consider contributing! Your support is essential for the project to grow.
 
 ### 📌 How to Contribute
 
