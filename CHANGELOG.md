@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/brmorillo/util/compare/v1.0.0...v1.1.0) (2025-01-13)
+
+
+### Bug Fixes
+
+* readme ([c072401](https://github.com/brmorillo/util/commit/c072401e2b2ba85abf8dc1ede6196a842dbc95e4))
+
+
+### Features
+
+* Alabama and Alaska Cities ([8516ab0](https://github.com/brmorillo/util/commit/8516ab030f03b4608eaf7b113a5510dad780f578))
+* EUA States ([67916c2](https://github.com/brmorillo/util/commit/67916c2b2db3f14977039385e5aa3483bc970c5a))
+
+
+
 # [1.0.0](https://github.com/brmorillo/util/compare/v0.4.0...v1.0.0) (2025-01-10)
 
 
