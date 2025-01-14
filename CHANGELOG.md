@@ -1,3 +1,13 @@
+## [2.0.2](https://github.com/brmorillo/util/compare/v2.0.1...v2.0.2) (2025-01-14)
+
+
+### Bug Fixes
+
+* export ([6cd88c7](https://github.com/brmorillo/util/commit/6cd88c7aae2ecc03ae689761d6170ca0b48bb800))
+* findCountryByProperty ([5829d3c](https://github.com/brmorillo/util/commit/5829d3ce401b8ef50fe65eeb5b0deeed3347ced2))
+
+
+
 ## [2.0.1](https://github.com/brmorillo/util/compare/v1.1.0...v2.0.1) (2025-01-14)
 
 
