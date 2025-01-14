@@ -1,7 +1,7 @@
 import { Countries } from './services/countries.service';
 
-export const Utils = {
+export const GlobalLocations = {
   Countries: Countries,
 };
 
-export { Countries as ValidationUtils } from './services/countries.service';
+export { Countries } from './services/countries.service';
