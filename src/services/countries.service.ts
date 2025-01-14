@@ -6,7 +6,7 @@ export class Countries {
   private static countries: Country[] = countriesData.countries;
 
   // Função auxiliar para buscar um país
-  private static findCountryByProperty(
+  public static findCountryByProperty(
     property: keyof Country,
     value: string,
   ): Country | undefined {
