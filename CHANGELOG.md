@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/brmorillo/util/compare/v2.0.2...v2.0.3) (2025-01-14)
+
+
+### Features
+
+* export types ([8377f5f](https://github.com/brmorillo/util/commit/8377f5f21f7e6dd24a8bfbb3ca32965ec62b3770))
+
+
+
 ## [2.0.2](https://github.com/brmorillo/util/compare/v2.0.1...v2.0.2) (2025-01-14)
 
 
