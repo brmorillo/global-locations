@@ -1,127 +1,127 @@
 /**
- * Interface que representa uma cidade
+ * Interface representing a city
  *
  * @interface City
  */
 export interface City {
   /**
-   * Identificador único da cidade
+   * Unique identifier of the city
    */
   id: number;
 
   /**
-   * Identificador do estado ao qual a cidade pertence
+   * Identifier of the state to which the city belongs
    */
   stateId: number;
 
   /**
-   * Nome da cidade
+   * Name of the city
    */
   name: string;
 
   /**
-   * Dados adicionais opcionais da cidade
+   * Optional additional city data
    */
   extra?: Object;
 }
 
 /**
- * Interface que representa um estado ou província
+ * Interface representing a state or province
  *
  * @interface State
  */
 export interface State {
   /**
-   * Identificador único do estado
+   * Unique identifier of the state
    */
   id: number;
 
   /**
-   * Nome completo do estado
+   * Full name of the state
    */
   name: string;
 
   /**
-   * Sigla ou abreviação do estado
+   * Acronym or abbreviation of the state
    */
   acronym: string;
 
   /**
-   * Lista de cidades pertencentes ao estado
+   * List of cities belonging to the state
    */
   cities: City[];
 }
 
 /**
- * Interface que representa um país
+ * Interface representing a country
  *
  * @interface Country
  */
 export interface Country {
   /**
-   * Identificador único do país (geralmente código ISO)
+   * Unique identifier of the country (usually ISO code)
    */
   id: string;
 
   /**
-   * Nome completo do país
+   * Full name of the country
    */
   name: string;
 
   /**
-   * Sigla ou abreviação do país
+   * Acronym or abbreviation of the country
    */
   acronym: string;
 
   /**
-   * Nome da capital do país
+   * Name of the country's capital
    */
   capital: string;
 
   /**
-   * Nome da moeda utilizada no país
+   * Name of the currency used in the country
    */
   coin: string;
 
   /**
-   * Código da moeda utilizada no país
+   * Currency code used in the country
    */
   coinCode: string;
 
   /**
-   * Grupo regional ao qual o país pertence
+   * Regional group to which the country belongs
    */
   regionGroup: string;
 
   /**
-   * Grupos econômicos aos quais o país pertence
+   * Economic groups to which the country belongs
    */
   economicGroups: string[];
 
   /**
-   * Continente onde o país está localizado
+   * Continent where the country is located
    */
   continent: string;
 
   /**
-   * Código de discagem direta internacional do país
+   * International direct dialing code of the country
    */
   ddi: string;
 
   /**
-   * Lista de estados ou províncias do país
+   * List of states or provinces of the country
    */
   states: State[];
 }
 
 /**
- * Interface que representa o conjunto completo de dados de localização
+ * Interface representing the complete set of location data
  *
  * @interface LocationData
  */
 export interface LocationData {
   /**
-   * Lista de todos os países disponíveis
+   * List of all available countries
    */
   countries: Country[];
 }

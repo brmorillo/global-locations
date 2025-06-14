@@ -2,7 +2,7 @@ import * as countriesJson from './countries.json';
 import { LocationData } from '../services/countries.interface';
 
 /**
- * Dados de localização carregados do arquivo JSON
+ * Location data loaded from the JSON file
  *
  * @type {LocationData}
  */

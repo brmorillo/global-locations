@@ -2,24 +2,24 @@ import { countriesData } from '../data';
 import { City, Country, State } from './countries.interface';
 
 /**
- * Classe que fornece métodos para acessar e manipular dados de localização global
- * como países, estados e cidades.
+ * Class that provides methods to access and manipulate global location data
+ * such as countries, states, and cities.
  *
  * @class Countries
  */
 export class Countries {
   /**
-   * Dados estáticos de países carregados do arquivo de dados
+   * Static country data loaded from the data file
    * @private
    */
   private static countries: Country[] = countriesData.countries;
 
   /**
-   * Função auxiliar para buscar um país por uma propriedade específica
+   * Helper function to find a country by a specific property
    *
-   * @param {keyof Country} property - Propriedade do país a ser usada na busca
-   * @param {string} value - Valor da propriedade para comparação
-   * @returns {Country | undefined} País encontrado ou undefined se não encontrado
+   * @param {keyof Country} property - Country property to be used in the search
+   * @param {string} value - Property value for comparison
+   * @returns {Country | undefined} Found country or undefined if not found
    */
   public static findCountryByProperty(
     property: keyof Country,
@@ -29,11 +29,11 @@ export class Countries {
   }
 
   /**
-   * Retorna todos os países com seus dados completos (incluindo estados).
+   * Returns all countries with their complete data (including states).
    *
-   * @returns {Country[]} Todos os países e seus dados completos
+   * @returns {Country[]} All countries and their complete data
    * @example
-   * // Obter todos os países com dados completos
+   * // Get all countries with complete data
    * const allCountries = Countries.getAllCountriesAndData();
    */
   public static getAllCountriesAndData(): Country[] {
@@ -41,11 +41,11 @@ export class Countries {
   }
 
   /**
-   * Retorna todos os países sem a propriedade 'states'.
+   * Returns all countries without the 'states' property.
    *
-   * @returns {Omit<Country, 'states'>[]} Lista de países sem os dados de estados
+   * @returns {Omit<Country, 'states'>[]} List of countries without state data
    * @example
-   * // Obter todos os países sem os dados de estados
+   * // Get all countries without state data
    * const countries = Countries.getAllCountries();
    */
   public static getAllCountries(): Omit<Country, 'states'>[] {
@@ -53,15 +53,15 @@ export class Countries {
   }
 
   /**
-   * Retorna um país pelo valor de uma propriedade específica (id, nome, etc.).
+   * Returns a country by the value of a specific property (id, name, etc.).
    *
-   * @param {Object} params - Parâmetros de busca
-   * @param {keyof Country} params.property - Propriedade do país para buscar
-   * @param {string} params.value - Valor da propriedade para a busca
-   * @param {boolean} params.selectStates - Indica se deve incluir estados no resultado
-   * @returns {Omit<Country, 'states'> | Country | undefined} País encontrado ou undefined se não encontrado
+   * @param {Object} params - Search parameters
+   * @param {keyof Country} params.property - Country property to search for
+   * @param {string} params.value - Property value for the search
+   * @param {boolean} params.selectStates - Indicates whether to include states in the result
+   * @returns {Omit<Country, 'states'> | Country | undefined} Found country or undefined if not found
    * @example
-   * // Buscar país pelo ID sem incluir estados
+   * // Search for a country by ID without including states
    * const brazil = Countries.getCountryBy({
    *   property: 'id',
    *   value: 'BR',
@@ -84,11 +84,11 @@ export class Countries {
   }
 
   /**
-   * Retorna todos os estados de todos os países.
+   * Returns all states from all countries.
    *
-   * @returns {State[]} Lista com todos os estados de todos os países
+   * @returns {State[]} List with all states from all countries
    * @example
-   * // Obter todos os estados de todos os países
+   * // Get all states from all countries
    * const allStates = Countries.getAllStates();
    */
   public static getAllStates(): State[] {
@@ -96,12 +96,12 @@ export class Countries {
   }
 
   /**
-   * Retorna os estados de um país específico.
+   * Returns the states of a specific country.
    *
-   * @param {string} countryId - ID do país
-   * @returns {State[] | undefined} Estados do país ou undefined se o país não for encontrado
+   * @param {string} countryId - Country ID
+   * @returns {State[] | undefined} States of the country or undefined if the country is not found
    * @example
-   * // Obter todos os estados do Brasil
+   * // Get all states of Brazil
    * const brazilStates = Countries.getStatesByCountryId('BR');
    */
   public static getStatesByCountryId(countryId: string): State[] | undefined {
@@ -119,16 +119,16 @@ export class Countries {
   }
 
   /**
-   * Busca um estado de um país com base em um parâmetro específico (id, nome, etc.).
+   * Searches for a state in a country based on a specific parameter (id, name, etc.).
    *
-   * @param {Object} options - Opções de busca
-   * @param {string} options.countryId - ID do país
-   * @param {Object} options.params - Parâmetros para busca do estado
-   * @param {keyof State} options.params.property - Propriedade do estado para buscar
-   * @param {string} options.params.value - Valor da propriedade para a busca
-   * @returns {State | undefined} Estado encontrado ou undefined se não encontrado
+   * @param {Object} options - Search options
+   * @param {string} options.countryId - Country ID
+   * @param {Object} options.params - Parameters for state search
+   * @param {keyof State} options.params.property - State property to search for
+   * @param {string} options.params.value - Property value for the search
+   * @returns {State | undefined} Found state or undefined if not found
    * @example
-   * // Buscar o estado de São Paulo no Brasil
+   * // Search for the state of São Paulo in Brazil
    * const saoPaulo = Countries.getStateByParams({
    *   countryId: 'BR',
    *   params: { property: 'acronym', value: 'SP' }
@@ -146,14 +146,14 @@ export class Countries {
   }
 
   /**
-   * Verifica se um estado pertence a um país específico.
+   * Checks if a state belongs to a specific country.
    *
-   * @param {Object} options - Opções de verificação
-   * @param {string} options.countryId - ID do país
-   * @param {string} options.stateId - ID do estado
-   * @returns {boolean} true se o estado pertencer ao país, false caso contrário
+   * @param {Object} options - Verification options
+   * @param {string} options.countryId - Country ID
+   * @param {string} options.stateId - State ID
+   * @returns {boolean} true if the state belongs to the country, false otherwise
    * @example
-   * // Verificar se o estado com ID 35 pertence ao Brasil
+   * // Check if the state with ID 35 belongs to Brazil
    * const belongs = Countries.isStateInCountry({
    *   countryId: 'BR',
    *   stateId: '35'
@@ -180,13 +180,13 @@ export class Countries {
   }
 
   /**
-   * Retorna todas as cidades de todos os estados de um país.
+   * Returns all cities from all states of a country.
    *
-   * @param {Object} options - Opções de busca
-   * @param {string} options.countryId - ID do país
-   * @returns {string[]} Lista de nomes de todas as cidades do país
+   * @param {Object} options - Search options
+   * @param {string} options.countryId - Country ID
+   * @returns {string[]} List of names of all cities in the country
    * @example
-   * // Obter todas as cidades do Brasil
+   * // Get all cities in Brazil
    * const brazilCities = Countries.getAllCities({ countryId: 'BR' });
    */
   public static getAllCities({ countryId }: { countryId: string }): string[] {
@@ -197,14 +197,14 @@ export class Countries {
   }
 
   /**
-   * Retorna todas as cidades de um estado específico dentro de um país.
+   * Returns all cities of a specific state within a country.
    *
-   * @param {Object} options - Opções de busca
-   * @param {string} options.countryId - ID do país
-   * @param {string} options.stateId - ID do estado
-   * @returns {string[]} Lista de nomes de cidades do estado
+   * @param {Object} options - Search options
+   * @param {string} options.countryId - Country ID
+   * @param {string} options.stateId - State ID
+   * @returns {string[]} List of city names in the state
    * @example
-   * // Obter todas as cidades do estado de São Paulo (ID 35) no Brasil
+   * // Get all cities in the state of São Paulo (ID 35) in Brazil
    * const spCities = Countries.getCitiesByStateId({
    *   countryId: 'BR',
    *   stateId: '35'
@@ -223,17 +223,17 @@ export class Countries {
   }
 
   /**
-   * Busca uma cidade específica por parâmetro dentro de um estado e país.
+   * Searches for a specific city by parameter within a state and country.
    *
-   * @param {Object} options - Opções de busca
-   * @param {string} options.countryId - ID do país
-   * @param {string} options.stateId - ID do estado
-   * @param {Object} options.params - Parâmetros de busca da cidade
-   * @param {keyof City} options.params.property - Propriedade da cidade para buscar
-   * @param {string} options.params.value - Valor da propriedade para a busca
-   * @returns {string | undefined} Nome da cidade ou undefined se não encontrada
+   * @param {Object} options - Search options
+   * @param {string} options.countryId - Country ID
+   * @param {string} options.stateId - State ID
+   * @param {Object} options.params - City search parameters
+   * @param {keyof City} options.params.property - City property to search for
+   * @param {string} options.params.value - Property value for the search
+   * @returns {string | undefined} City name or undefined if not found
    * @example
-   * // Buscar a cidade com ID 3550308 no estado de São Paulo (ID 35) no Brasil
+   * // Search for the city with ID 3550308 in the state of São Paulo (ID 35) in Brazil
    * const saoPauloCity = Countries.getCitiesByParams({
    *   countryId: 'BR',
    *   stateId: '35',

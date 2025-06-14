@@ -7,13 +7,13 @@ import {
 import { Countries } from './services/countries.service';
 
 /**
- * Objeto principal que expõe os serviços da biblioteca global-locations
+ * Main object that exposes the global-locations library services
  *
  * @namespace GlobalLocations
  */
 export const GlobalLocations = {
   /**
-   * Serviço para acesso a dados de países, estados e cidades
+   * Service for accessing country, state, and city data
    */
   Countries,
 };

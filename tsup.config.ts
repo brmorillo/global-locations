@@ -6,7 +6,7 @@ export default defineConfig({
   outExtension: ({ format }) => ({
     js: format === 'cjs' ? '.js' : '.mjs',
   }),
-  dts: true,
-  clean: true,
-  sourcemap: true,
+  dts: true, // Generate TypeScript types
+  clean: true, // Clean dist folder before building
+  sourcemap: true, // Generate source maps
 });

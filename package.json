@@ -16,12 +16,15 @@
     "build": "tsup",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\"",
+    "fix": "npm run lint && npm run format",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "prepare": "husky install",
     "release": "standard-version",
     "commit": "cz",
     "version:bump": "standard-version && git push --follow-tags origin main",
-    "pub": "npm run build && npm publish --access public"
+    "prepub": "npm run fix && npm run test",
+    "pub": "npm run prepub && npm run build && npm run version:bump && npm publish --access public"
   },
   "keywords": [
     "global-locations",
