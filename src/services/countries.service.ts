@@ -22,9 +22,11 @@ export class Countries {
    * @returns {Country | undefined} Found country or undefined if not found
    */
   public static findCountryByProperty(
-    property: keyof Country,
-    value: string,
+    property: keyof Country | undefined,
+    value: string | null | undefined,
   ): Country | undefined {
+    if (property === undefined || value === undefined || value === null)
+      return undefined;
     return this.countries.find((country) => country[property] === value);
   }
 
@@ -48,8 +50,13 @@ export class Countries {
    * // Get all countries without state data
    * const countries = Countries.getAllCountries();
    */
-  public static getAllCountries(): Omit<Country, 'states'>[] {
-    return this.countries.map(({ states, ...countryData }) => countryData);
+  public static getAllCountries(): (Omit<Country, 'states'> & {
+    states: undefined;
+  })[] {
+    return this.countries.map(({ states, ...countryData }) => ({
+      ...countryData,
+      states: undefined,
+    }));
   }
 
   /**
@@ -74,13 +81,20 @@ export class Countries {
     selectStates = false,
   }: {
     property: keyof Country;
-    value: string;
+    value: string | undefined;
     selectStates: boolean;
-  }): Omit<Country, 'states'> | Country | undefined {
+  }): Country | undefined {
+    if (value === undefined || value === null) return undefined;
+
     const country = this.findCountryByProperty(property, value);
     if (!country) return undefined;
 
-    return selectStates ? country : { ...country, states: undefined };
+    if (selectStates) {
+      return country;
+    } else {
+      const { states, ...rest } = country;
+      return { ...rest, states: undefined };
+    }
   }
 
   /**
@@ -252,7 +266,122 @@ export class Countries {
     const statesList = this.getStatesByCountryId(countryId);
     const state = statesList?.find((state) => state.id === Number(stateId));
 
+    // Comparação correta para propriedades numéricas como 'id'
+    if (params.property === 'id') {
+      return state?.cities.find(
+        (city) => String(city[params.property]) === params.value,
+      )?.name;
+    }
+
     return state?.cities.find((city) => city[params.property] === params.value)
       ?.name;
+  }
+
+  /**
+   * Gets a city by its ID across all countries and states.
+   *
+   * @param {number} cityId - The ID of the city to find
+   * @returns {City | undefined} - The city object if found, undefined otherwise
+   * @example
+   * // Find a city with ID 3550308 (São Paulo)
+   * const city = Countries.getCityById(3550308);
+   */
+  public static getCityById(cityId: number): City | undefined {
+    for (const country of this.countries) {
+      for (const state of country.states) {
+        const city = state.cities.find((city) => city.id === cityId);
+        if (city) return city;
+      }
+    }
+    return undefined;
+  }
+
+  /**
+   * Searches for cities by name with partial matching across all countries.
+   *
+   * @param {string} name - The name or partial name to search for
+   * @param {boolean} caseSensitive - Whether the search should be case sensitive (default: false)
+   * @returns {Array<{city: City, state: State, country: Country}>} - Array of matching cities with their state and country
+   * @example
+   * // Search for cities containing "São" in their name
+   * const cities = Countries.searchCitiesByName("São");
+   */
+  public static searchCitiesByName(
+    name: string,
+    caseSensitive: boolean = false,
+  ): Array<{ city: City; state: State; country: Country }> {
+    const results: Array<{ city: City; state: State; country: Country }> = [];
+    const searchTerm = caseSensitive ? name : name.toLowerCase();
+
+    for (const country of this.countries) {
+      for (const state of country.states) {
+        for (const city of state.cities) {
+          const cityName = caseSensitive ? city.name : city.name.toLowerCase();
+          if (cityName.includes(searchTerm)) {
+            results.push({ city, state, country });
+          }
+        }
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * Gets countries by continent.
+   *
+   * @param {string} continent - The continent name
+   * @param {boolean} includeStates - Whether to include states in the results (default: false)
+   * @returns {Country[]} - Array of countries in the specified continent
+   * @example
+   * // Get all countries in South America
+   * const southAmericanCountries = Countries.getCountriesByContinent("South America");
+   */
+  public static getCountriesByContinent(
+    continent: string,
+    includeStates: boolean = false,
+  ): Country[] {
+    const countries = this.countries.filter(
+      (country) => country.continent.toLowerCase() === continent.toLowerCase(),
+    );
+
+    if (!includeStates) {
+      return countries.map(({ states, ...countryData }) => ({
+        ...countryData,
+        states: undefined,
+      })) as unknown as Country[];
+    }
+
+    return countries;
+  }
+
+  /**
+   * Gets countries by economic group.
+   *
+   * @param {string} economicGroup - The economic group name (e.g., "Mercosul", "EU")
+   * @param {boolean} includeStates - Whether to include states in the results (default: false)
+   * @returns {Country[]} - Array of countries in the specified economic group
+   * @example
+   * // Get all countries in Mercosul
+   * const mercosulCountries = Countries.getCountriesByEconomicGroup("Mercosul");
+   */
+  public static getCountriesByEconomicGroup(
+    economicGroup: string,
+    includeStates: boolean = false,
+  ): Country[] {
+    const countries = this.countries.filter((country) =>
+      country.economicGroups.some(
+        (group) => group.toLowerCase() === economicGroup.toLowerCase(),
+      ),
+    );
+
+    if (!includeStates) {
+      return countries.map(({ states, ...countryData }) => ({
+        ...countryData,
+        states: undefined,
+      })) as unknown as Country[];
+    }
+
+    return countries;
   }
 }

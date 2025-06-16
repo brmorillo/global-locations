@@ -111,7 +111,7 @@ export interface Country {
   /**
    * List of states or provinces of the country
    */
-  states: State[];
+  states: State[] | undefined;
 }
 
 /**
