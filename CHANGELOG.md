@@ -1,3 +1,33 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0](https://github.com/brmorillo/global-locations/compare/v2.0.1...v3.0.0) (2025-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **testes:** Tests for app and standards lib architeture
+
+### Features
+
+* export types ([8377f5f](https://github.com/brmorillo/global-locations/commit/8377f5f21f7e6dd24a8bfbb3ca32965ec62b3770))
+* **standard repo:** standard repo ([442cd16](https://github.com/brmorillo/global-locations/commit/442cd16cbbe3d7e0ad4ba00ae3453da00a87b840))
+
+
+### Bug Fixes
+
+* export ([6cd88c7](https://github.com/brmorillo/global-locations/commit/6cd88c7aae2ecc03ae689761d6170ca0b48bb800))
+* findCountryByProperty ([5829d3c](https://github.com/brmorillo/global-locations/commit/5829d3ce401b8ef50fe65eeb5b0deeed3347ced2))
+
+
+### Documentation
+
+* **comments:** comments in english ([8cdf8ab](https://github.com/brmorillo/global-locations/commit/8cdf8ab8bbb3be0a8265db56c80b16182c3f8e63))
+
+
+* **testes:** create testes for lib ([d6ff38a](https://github.com/brmorillo/global-locations/commit/d6ff38a61981bb2feab15c5e60208199f2543723))
+
 ## [2.0.3](https://github.com/brmorillo/util/compare/v2.0.2...v2.0.3) (2025-01-14)
 
 

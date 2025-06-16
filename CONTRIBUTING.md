@@ -1,21 +1,48 @@
-## Contribution Guidelines
+# Contributing to @brmorillo/global-locations
 
-1. **No direct commits to the `main` branch:**
-   All development must be done in separate branches.
+Thank you for your interest in contributing to this project! Here are some guidelines to help you get started.
 
-2. **Branch naming:**
-   Use descriptive names for your branches. Examples:
+## Development Setup
 
-   - `feat/new-feature`
-   - `fix/login-error`
+1. Fork and clone the repository
+2. Install dependencies: `npm install`
+3. Setup husky hooks: `npm run prepare`
 
-3. **Pull Requests:**
+## Development Workflow
 
-   - Every pull request (PR) must be reviewed and approved before merging into `main`.
-   - Ensure you follow the commit message standards.
+1. Create a new branch for your feature or bugfix
+2. Make your changes
+3. Run tests: `npm test`
+4. Ensure code quality: `npm run lint`
+5. Format code: `npm run format`
+6. Commit your changes using commitizen: `npm run commit`
+7. Push your branch and create a pull request
 
-4. **Commit Messages:**
-   Follow the project's commit message conventions (based on Angular):
-   - `feat: description of the new feature`
-   - `fix: description of the bug fix`
-   - `docs: documentation updates`
+## Commit Guidelines
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) for commit messages. Please use the `npm run commit` command which will guide you through creating a properly formatted commit message.
+
+## Release Process
+
+Releases are managed using [standard-version](https://github.com/conventional-changelog/standard-version). The maintainers will handle the release process.
+
+## Code Style
+
+This project uses ESLint and Prettier for code style and formatting. Please ensure your code follows these standards by running:
+
+```bash
+npm run lint
+npm run format
+```
+
+## Testing
+
+Please include tests for any new features or bug fixes. Run the test suite with:
+
+```bash
+npm test
+```
+
+## License
+
+By contributing to this project, you agree that your contributions will be licensed under the project's MIT license.
