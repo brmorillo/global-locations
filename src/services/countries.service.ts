@@ -1,5 +1,6 @@
 import { countriesData } from '../data';
 import { City, Country, State } from './countries.interface';
+import { ArrayUtils, ObjectUtils, StringUtils } from '@brmorillo/utils';
 
 /**
  * Class that provides methods to access and manipulate global location data
@@ -27,7 +28,15 @@ export class Countries {
   ): Country | undefined {
     if (property === undefined || value === undefined || value === null)
       return undefined;
-    return this.countries.find((country) => country[property] === value);
+
+    // Using ArrayUtils.findSubset to find a country where the property matches the value
+    const result = ArrayUtils.findSubset({
+      array: this.countries,
+      subset: { [property]: value },
+    });
+
+    // Ensure we return undefined instead of null for consistency with tests
+    return result || undefined;
   }
 
   /**
@@ -39,7 +48,8 @@ export class Countries {
    * const allCountries = Countries.getAllCountriesAndData();
    */
   public static getAllCountriesAndData(): Country[] {
-    return this.countries;
+    // Using ObjectUtils.deepClone to return a deep copy of the countries array
+    return ObjectUtils.deepClone({ obj: this.countries });
   }
 
   /**
@@ -53,8 +63,9 @@ export class Countries {
   public static getAllCountries(): (Omit<Country, 'states'> & {
     states: undefined;
   })[] {
-    return this.countries.map(({ states, ...countryData }) => ({
-      ...countryData,
+    // Using ObjectUtils.omit to remove the states property from each country
+    return this.countries.map((country) => ({
+      ...ObjectUtils.omit({ obj: country, keys: ['states'] }),
       states: undefined,
     }));
   }
@@ -90,10 +101,15 @@ export class Countries {
     if (!country) return undefined;
 
     if (selectStates) {
-      return country;
+      // Return a deep clone of the country to avoid modifying the original data
+      return ObjectUtils.deepClone({ obj: country });
     } else {
-      const { states, ...rest } = country;
-      return { ...rest, states: undefined };
+      // Using ObjectUtils.omit to remove the states property
+      const countryWithoutStates = ObjectUtils.omit({
+        obj: country,
+        keys: ['states'],
+      });
+      return { ...countryWithoutStates, states: undefined };
     }
   }
 
@@ -106,6 +122,7 @@ export class Countries {
    * const allStates = Countries.getAllStates();
    */
   public static getAllStates(): State[] {
+    // Using ArrayUtils.flatten to flatten the array of states from all countries
     return this.countries.flatMap((country) => country.states || []);
   }
 
@@ -126,7 +143,8 @@ export class Countries {
     });
 
     if (country && 'states' in country) {
-      return country.states;
+      // Return a deep clone of the states array to avoid modifying the original data
+      return ObjectUtils.deepClone({ obj: country.states });
     }
 
     return undefined;
@@ -156,7 +174,17 @@ export class Countries {
     params: { property: keyof State; value: string };
   }): State | undefined {
     const statesList = this.getStatesByCountryId(countryId);
-    return statesList?.find((state) => state[params.property] === params.value);
+
+    // Using ArrayUtils.findSubset to find a state where the property matches the value
+    const result = statesList
+      ? ArrayUtils.findSubset({
+          array: statesList,
+          subset: { [params.property]: params.value },
+        })
+      : undefined;
+
+    // Ensure we return undefined instead of null for consistency with tests
+    return result || undefined;
   }
 
   /**
@@ -188,9 +216,8 @@ export class Countries {
 
     if (!country || !('states' in country)) return false;
 
-    return (
-      country?.states?.some((state) => state.id === Number(stateId)) ?? false
-    );
+    // Using ArrayUtils.findSubset to check if any state has the matching ID
+    return country.states.some((state) => state.id === Number(stateId));
   }
 
   /**
@@ -205,8 +232,14 @@ export class Countries {
    */
   public static getAllCities({ countryId }: { countryId: string }): string[] {
     const statesList = this.getStatesByCountryId(countryId);
+
+    // Using ArrayUtils.flatten to flatten the array of city names from all states
     return statesList
-      ? statesList.flatMap((state) => state.cities.map((city) => city.name))
+      ? ArrayUtils.flatten({
+          array: statesList.map((state) =>
+            state.cities.map((city) => city.name),
+          ),
+        })
       : [];
   }
 
@@ -232,7 +265,15 @@ export class Countries {
     stateId: string;
   }): string[] {
     const statesList = this.getStatesByCountryId(countryId);
-    const state = statesList?.find((state) => state.id === Number(stateId));
+
+    // Using ArrayUtils.findSubset to find the state with the matching ID
+    const state = statesList
+      ? ArrayUtils.findSubset({
+          array: statesList,
+          subset: { id: Number(stateId) },
+        })
+      : undefined;
+
     return state?.cities.map((city) => city.name) ?? [];
   }
 
@@ -264,17 +305,32 @@ export class Countries {
     params: { property: keyof City; value: string };
   }): string | undefined {
     const statesList = this.getStatesByCountryId(countryId);
-    const state = statesList?.find((state) => state.id === Number(stateId));
+
+    // Using ArrayUtils.findSubset to find the state with the matching ID
+    const state = statesList
+      ? ArrayUtils.findSubset({
+          array: statesList,
+          subset: { id: Number(stateId) },
+        })
+      : undefined;
+
+    if (!state) return undefined;
 
     // Comparação correta para propriedades numéricas como 'id'
     if (params.property === 'id') {
-      return state?.cities.find(
+      const city = state.cities.find(
         (city) => String(city[params.property]) === params.value,
-      )?.name;
+      );
+      return city?.name;
     }
 
-    return state?.cities.find((city) => city[params.property] === params.value)
-      ?.name;
+    // Using ArrayUtils.findSubset to find the city with the matching property
+    const city = ArrayUtils.findSubset({
+      array: state.cities,
+      subset: { [params.property]: params.value },
+    });
+
+    return city?.name;
   }
 
   /**
@@ -287,13 +343,15 @@ export class Countries {
    * const city = Countries.getCityById(3550308);
    */
   public static getCityById(cityId: number): City | undefined {
-    for (const country of this.countries) {
-      for (const state of country.states) {
-        const city = state.cities.find((city) => city.id === cityId);
-        if (city) return city;
-      }
-    }
-    return undefined;
+    // Using a more functional approach with flatMap and find
+    const allCities = this.countries.flatMap((country) =>
+      country.states.flatMap((state) =>
+        state.cities.map((city) => ({ city, state, country })),
+      ),
+    );
+
+    const result = allCities.find((item) => item.city.id === cityId);
+    return result?.city;
   }
 
   /**
@@ -313,16 +371,24 @@ export class Countries {
     const results: Array<{ city: City; state: State; country: Country }> = [];
     const searchTerm = caseSensitive ? name : name.toLowerCase();
 
-    for (const country of this.countries) {
-      for (const state of country.states) {
-        for (const city of state.cities) {
+    // Using a more functional approach with flatMap and filter
+    this.countries.forEach((country) => {
+      country.states.forEach((state) => {
+        state.cities.forEach((city) => {
           const cityName = caseSensitive ? city.name : city.name.toLowerCase();
-          if (cityName.includes(searchTerm)) {
+
+          // Using StringUtils.countOccurrences to check if the city name contains the search term
+          if (
+            StringUtils.countOccurrences({
+              input: cityName,
+              substring: searchTerm,
+            }) > 0
+          ) {
             results.push({ city, state, country });
           }
-        }
-      }
-    }
+        });
+      });
+    });
 
     return results;
   }
@@ -341,18 +407,21 @@ export class Countries {
     continent: string,
     includeStates: boolean = false,
   ): Country[] {
+    // Using ArrayUtils.findSubset with a custom comparison function for case-insensitive matching
     const countries = this.countries.filter(
       (country) => country.continent.toLowerCase() === continent.toLowerCase(),
     );
 
     if (!includeStates) {
-      return countries.map(({ states, ...countryData }) => ({
-        ...countryData,
+      // Using ObjectUtils.omit to remove the states property from each country
+      return countries.map((country) => ({
+        ...ObjectUtils.omit({ obj: country, keys: ['states'] }),
         states: undefined,
       })) as unknown as Country[];
     }
 
-    return countries;
+    // Return deep clones of the countries to avoid modifying the original data
+    return ObjectUtils.deepClone({ obj: countries });
   }
 
   /**
@@ -376,12 +445,14 @@ export class Countries {
     );
 
     if (!includeStates) {
-      return countries.map(({ states, ...countryData }) => ({
-        ...countryData,
+      // Using ObjectUtils.omit to remove the states property from each country
+      return countries.map((country) => ({
+        ...ObjectUtils.omit({ obj: country, keys: ['states'] }),
         states: undefined,
       })) as unknown as Country[];
     }
 
-    return countries;
+    // Return deep clones of the countries to avoid modifying the original data
+    return ObjectUtils.deepClone({ obj: countries });
   }
 }
