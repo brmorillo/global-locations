@@ -1,6 +1,6 @@
 {
   "name": "@brmorillo/global-locations",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "Public API for global locations",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
