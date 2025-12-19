@@ -1,6 +1,6 @@
 {
   "name": "@brmorillo/global-locations",
-  "version": "4.0.0",
+  "version": "4.0.2",
   "description": "Public API for global locations",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -14,21 +14,15 @@
   },
   "scripts": {
     "build": "tsup",
-    "lint": "eslint \"{src,apps,libs,tests}/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
-    "fix": "npm run lint && npm run format",
-    "test": "jest",
-    "test:unit": "jest --selectProjects unit",
-    "test:integration": "jest --selectProjects integration",
-    "test:benchmark": "jest --selectProjects benchmark",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "fix": "bun run lint && bun run format",
     "prepare": "husky install",
     "release": "standard-version",
     "commit": "cz",
     "version:bump": "standard-version && git push --follow-tags origin main",
-    "prepub": "npm run fix && npm run test",
-    "pub": "npm run prepub && npm run build && npm run version:bump && npm publish --access public"
+    "prepub": "bun run fix",
+    "pub": "bun run prepub && bun run build && bun run version:bump && npm publish --access public"
   },
   "keywords": [
     "global-locations",
@@ -47,7 +41,6 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.50.0",
     "@typescript-eslint/parser": "^8.50.0",
     "commitizen": "^4.3.1",
@@ -56,11 +49,9 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
-    "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "standard-version": "^9.5.0",
-    "ts-jest": "^29.4.6",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },

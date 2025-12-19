@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.2](https://github.com/brmorillo/global-locations/compare/v4.0.0...v4.0.2) (2025-12-19)
+
+
+### Bug Fixes
+
+* remove 182 duplicate city entries from US states ([d2218d3](https://github.com/brmorillo/global-locations/commit/d2218d34917f7e00a2bfe9de23a9ed3c047ed9bc))
+
+### [4.0.1](https://github.com/brmorillo/global-locations/compare/v4.0.0...v4.0.1) (2025-12-19)
+
+
+### Bug Fixes
+
+* remove 182 duplicate city entries from US states ([d2218d3](https://github.com/brmorillo/global-locations/commit/d2218d34917f7e00a2bfe9de23a9ed3c047ed9bc))
+
 ### [3.0.2](https://github.com/brmorillo/global-locations/compare/v3.0.1...v3.0.2) (2025-06-18)
 
 ### [3.0.1](https://github.com/brmorillo/global-locations/compare/v3.0.0...v3.0.1) (2025-06-16)
@@ -78,6 +92,3 @@ All notable changes to this project will be documented in this file. See [standa
 * project ([0972a1c](https://github.com/brmorillo/util/commit/0972a1c31a7893cc8c1699b1627ff33fe2278a80))
 * support to commonJS ([f40f539](https://github.com/brmorillo/util/commit/f40f539a7cd0e4e85f38208599acd87242cbc0a8))
 * tests ([a2829fc](https://github.com/brmorillo/util/commit/a2829fc4e8aa3c1849afe19bf6589d2acefed7eb))
-
-
-
