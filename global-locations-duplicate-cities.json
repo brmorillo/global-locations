@@ -1,0 +1,1593 @@
+{
+  "summary": {
+    "totalDuplicates": 176,
+    "generatedAt": "2025-12-19T02:43:41.197Z",
+    "description": "Lista de cidades com nomes duplicados no mesmo estado"
+  },
+  "duplicates": [
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Alabama",
+      "stateId": 54,
+      "cityName": "Mount Olive",
+      "duplicateIds": ["+1371", "+1372"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arizona",
+      "stateId": 56,
+      "cityName": "Cottonwood",
+      "duplicateIds": ["+11044", "+11045"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arizona",
+      "stateId": 56,
+      "cityName": "Red Rock",
+      "duplicateIds": ["+11252", "+11253"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arizona",
+      "stateId": 56,
+      "cityName": "St. Johns",
+      "duplicateIds": ["+11273", "+11274"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arkansas",
+      "stateId": 57,
+      "cityName": "Midway",
+      "duplicateIds": ["+11799", "+11800"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arkansas",
+      "stateId": 57,
+      "cityName": "Oak Grove",
+      "duplicateIds": ["+11838", "+11839"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arkansas",
+      "stateId": 57,
+      "cityName": "Salem",
+      "duplicateIds": ["+11929", "+11930"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Arkansas",
+      "stateId": 57,
+      "cityName": "Sulphur Springs",
+      "duplicateIds": ["+11963", "+11964"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Alta Sierra",
+      "duplicateIds": ["+12071", "+12072"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Bayview",
+      "duplicateIds": ["+12128", "+12129"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Bear Valley",
+      "duplicateIds": ["+12133", "+12134"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Burbank",
+      "duplicateIds": ["+12215", "+12216"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Centerville",
+      "duplicateIds": ["+12291", "+12292"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Cold Springs",
+      "duplicateIds": ["+12337", "+12338"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Cottonwood",
+      "duplicateIds": ["+12365", "+12366"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "El Cerrito",
+      "duplicateIds": ["+12485", "+12486"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "El Sobrante",
+      "duplicateIds": ["+12506", "+12507"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Fairfax",
+      "duplicateIds": ["+12522", "+12523"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Franklin",
+      "duplicateIds": ["+12568", "+12569"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Greenfield",
+      "duplicateIds": ["+12625", "+12626"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Green Valley",
+      "duplicateIds": ["+12628", "+12629"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Lakeside",
+      "duplicateIds": ["+12806", "+12807"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Las Flores",
+      "duplicateIds": ["+12825", "+12826"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Live Oak",
+      "duplicateIds": ["+12861", "+12862"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Lockwood",
+      "duplicateIds": ["+12866", "+12867"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Mountain View",
+      "duplicateIds": ["+13021", "+13022"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Paradise",
+      "duplicateIds": ["+13128", "+13129"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Rolling Hills",
+      "duplicateIds": ["+13269", "+13270"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "San Miguel",
+      "duplicateIds": ["+13332", "+13333"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Spring Valley",
+      "duplicateIds": ["+13430", "+13431"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Strawberry",
+      "duplicateIds": ["+13449", "+13450"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "California",
+      "stateId": 58,
+      "cityName": "Twin Lakes",
+      "duplicateIds": ["+13530", "+13531"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Colorado",
+      "stateId": 59,
+      "cityName": "Coal Creek",
+      "duplicateIds": ["+13747", "+13748"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Colorado",
+      "stateId": 59,
+      "cityName": "Glendale",
+      "duplicateIds": ["+13843", "+13844"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Colorado",
+      "stateId": 59,
+      "cityName": "Twin Lakes",
+      "duplicateIds": ["+14105", "+14106"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Connecticut",
+      "stateId": 60,
+      "cityName": "Long Hill",
+      "duplicateIds": ["+14232", "+14233"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "Lake Butler",
+      "duplicateIds": ["+14860", "+14861"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "Midway",
+      "duplicateIds": ["+14971", "+14972", "+14973"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "Pine Ridge",
+      "duplicateIds": ["+15116", "+15117"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "Plantation",
+      "duplicateIds": ["+15121", "+15122"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "University",
+      "duplicateIds": ["+15297", "+15298"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Florida",
+      "stateId": 62,
+      "cityName": "Whitfield",
+      "duplicateIds": ["+15364", "+15365"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Georgia",
+      "stateId": 63,
+      "cityName": "Buckhead",
+      "duplicateIds": ["+15481", "+15482"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Georgia",
+      "stateId": 63,
+      "cityName": "Mountain Park",
+      "duplicateIds": ["+15820", "+15821"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Hawaii",
+      "stateId": 64,
+      "cityName": "Kailua",
+      "duplicateIds": ["+16121", "+16122"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Hawaii",
+      "stateId": 64,
+      "cityName": "Waimea",
+      "duplicateIds": ["+16225", "+16226"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Illinois",
+      "stateId": 66,
+      "cityName": "Kingston",
+      "duplicateIds": ["+17152", "+17153"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Illinois",
+      "stateId": 66,
+      "cityName": "Lakewood",
+      "duplicateIds": ["+17183", "+17184"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Illinois",
+      "stateId": 66,
+      "cityName": "Willowbrook",
+      "duplicateIds": ["+17895", "+17896"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Illinois",
+      "stateId": 66,
+      "cityName": "Wilmington",
+      "duplicateIds": ["+17901", "+17902"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Illinois",
+      "stateId": 66,
+      "cityName": "Windsor",
+      "duplicateIds": ["+17906", "+17907"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Indiana",
+      "stateId": 67,
+      "cityName": "Geneva",
+      "duplicateIds": ["+18235", "+18236"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Indiana",
+      "stateId": 67,
+      "cityName": "Highland",
+      "duplicateIds": ["+18302", "+18303"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Indiana",
+      "stateId": 67,
+      "cityName": "Marion",
+      "duplicateIds": ["+18447", "+18448"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Indiana",
+      "stateId": 67,
+      "cityName": "Middlebury",
+      "duplicateIds": ["+18477", "+18478"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Indiana",
+      "stateId": 67,
+      "cityName": "Milford",
+      "duplicateIds": ["+18483", "+18484"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Kentucky",
+      "stateId": 70,
+      "cityName": "Fairview",
+      "duplicateIds": ["+110837", "+110838"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Kentucky",
+      "stateId": 70,
+      "cityName": "Westwood",
+      "duplicateIds": ["+111200", "+111201"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Maryland",
+      "stateId": 73,
+      "cityName": "Bel Air",
+      "duplicateIds": ["+111898", "+111899"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Maryland",
+      "stateId": 73,
+      "cityName": "Chevy Chase",
+      "duplicateIds": ["+111970", "+111971"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Maryland",
+      "stateId": 73,
+      "cityName": "Queen Anne",
+      "duplicateIds": ["+112284", "+112285"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Maryland",
+      "stateId": 73,
+      "cityName": "Woodlawn",
+      "duplicateIds": ["+112396", "+112397"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Michigan",
+      "stateId": 75,
+      "cityName": "Bear Lake",
+      "duplicateIds": ["+112701", "+112702"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Michigan",
+      "stateId": 75,
+      "cityName": "Sand Lake",
+      "duplicateIds": ["+113266", "+113267"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "Big Lake",
+      "duplicateIds": ["+113467", "+113468"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "Elbow Lake",
+      "duplicateIds": ["+113637", "+113638"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "Mahnomen",
+      "duplicateIds": ["+113910", "+113911"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "Rice Lake",
+      "duplicateIds": ["+114088", "+114089"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "St. Anthony",
+      "duplicateIds": ["+114122", "+114123"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Minnesota",
+      "stateId": 76,
+      "cityName": "Twin Lakes",
+      "duplicateIds": ["+114221", "+114222"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Mississippi",
+      "stateId": 77,
+      "cityName": "Bogue Chitto",
+      "duplicateIds": ["+114351", "+114352"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Montana",
+      "stateId": 79,
+      "cityName": "Bridger",
+      "duplicateIds": ["+115870", "+115871"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Jersey",
+      "stateId": 83,
+      "cityName": "Greenwich",
+      "duplicateIds": ["+117377", "+117378"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Jersey",
+      "stateId": 83,
+      "cityName": "Silver Lake",
+      "duplicateIds": ["+117719", "+117720", "+117721"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "Arroyo Hondo",
+      "duplicateIds": ["+117870", "+117871"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "La Cueva",
+      "duplicateIds": ["+118058", "+118059"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "La Madera",
+      "duplicateIds": ["+118071", "+118072"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "Mountain View",
+      "duplicateIds": ["+118146", "+118147"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "Placitas",
+      "duplicateIds": ["+118197", "+118198"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "San Antonito",
+      "duplicateIds": ["+118251", "+118252"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "San Jose",
+      "duplicateIds": ["+118261", "+118262"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "San Ysidro",
+      "duplicateIds": ["+118280", "+118281"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "Torreon",
+      "duplicateIds": ["+118327", "+118328"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New Mexico",
+      "stateId": 84,
+      "cityName": "Valencia",
+      "duplicateIds": ["+118347", "+118348"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Fairview",
+      "duplicateIds": ["+118723", "+118724"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Greenville",
+      "duplicateIds": ["+118819", "+118820"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Milton",
+      "duplicateIds": ["+119074", "+119075"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Northville",
+      "duplicateIds": ["+119183", "+119184"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Riverside",
+      "duplicateIds": ["+119332", "+119333"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Tuckahoe",
+      "duplicateIds": ["+119517", "+119518"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "White Lake",
+      "duplicateIds": ["+119629", "+119630"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "New York",
+      "stateId": 85,
+      "cityName": "Woodbury",
+      "duplicateIds": ["+119648", "+119649"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "North Carolina",
+      "stateId": 86,
+      "cityName": "Fairview",
+      "duplicateIds": ["+119901", "+119902"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "North Carolina",
+      "stateId": 86,
+      "cityName": "Flat Rock",
+      "duplicateIds": ["+119913", "+119914"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Bainbridge",
+      "duplicateIds": ["+120898", "+120899"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Dillonvale",
+      "duplicateIds": ["+121146", "+121147"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Harrisburg",
+      "duplicateIds": ["+121303", "+121304"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Lafayette",
+      "duplicateIds": ["+121402", "+121403"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Lincoln Heights",
+      "duplicateIds": ["+121441", "+121442"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "New Haven",
+      "duplicateIds": ["+121634", "+121635"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Newport",
+      "duplicateIds": ["+121648", "+121649"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Oakwood",
+      "duplicateIds": ["+121693", "+121694", "+121695"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Salem Heights",
+      "duplicateIds": ["+121856", "+121857"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Shawnee",
+      "duplicateIds": ["+121881", "+121882"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Shawnee Hills",
+      "duplicateIds": ["+121883", "+121884"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Sherwood",
+      "duplicateIds": ["+121889", "+121890"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Ohio",
+      "stateId": 88,
+      "cityName": "Shiloh",
+      "duplicateIds": ["+121891", "+121892"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Butler",
+      "duplicateIds": ["+122221", "+122222"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Caney",
+      "duplicateIds": ["+122235", "+122236"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Indianola",
+      "duplicateIds": ["+122494", "+122495"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Liberty",
+      "duplicateIds": ["+122559", "+122560"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Marietta",
+      "duplicateIds": ["+122600", "+122601"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oklahoma",
+      "stateId": 89,
+      "cityName": "Shady Grove",
+      "duplicateIds": ["+122792", "+122793"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Oregon",
+      "stateId": 90,
+      "cityName": "Fairview",
+      "duplicateIds": ["+123080", "+123081"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Aaronsburg",
+      "duplicateIds": ["+123388", "+123389"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Centerville borough",
+      "duplicateIds": ["+123647", "+123648"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Clinton",
+      "duplicateIds": ["+123699", "+123700"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Coaldale borough",
+      "duplicateIds": ["+123705", "+123706"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Eagleville",
+      "duplicateIds": ["+123837", "+123838"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Forestville",
+      "duplicateIds": ["+123977", "+123978"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Fredericksburg",
+      "duplicateIds": ["+124002", "+124003", "+124004"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Georgetown",
+      "duplicateIds": ["+124034", "+124035"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Gray",
+      "duplicateIds": ["+124073", "+124074"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Jacksonville",
+      "duplicateIds": ["+124210", "+124211"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Jefferson borough",
+      "duplicateIds": ["+124220", "+124221"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Liberty borough",
+      "duplicateIds": ["+124339", "+124340"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Marshallton",
+      "duplicateIds": ["+124436", "+124437"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Newburg borough",
+      "duplicateIds": ["+124594", "+124595"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Oakland",
+      "duplicateIds": ["+124671", "+124672"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Pleasantville borough",
+      "duplicateIds": ["+124778", "+124779"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Unionville",
+      "duplicateIds": ["+125200", "+125201", "+125203"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Valley View",
+      "duplicateIds": ["+125214", "+125215"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Vicksburg",
+      "duplicateIds": ["+125223", "+125224"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Pennsylvania",
+      "stateId": 91,
+      "cityName": "Westwood",
+      "duplicateIds": ["+125311", "+125312"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "South Carolina",
+      "stateId": 93,
+      "cityName": "Elgin",
+      "duplicateIds": ["+125557", "+125558"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "South Carolina",
+      "stateId": 93,
+      "cityName": "Pine Ridge",
+      "duplicateIds": ["+125760", "+125761"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "South Carolina",
+      "stateId": 93,
+      "cityName": "Springdale",
+      "duplicateIds": ["+125830", "+125831"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "South Dakota",
+      "stateId": 94,
+      "cityName": "Clear Lake",
+      "duplicateIds": ["+125994", "+125995"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Tennessee",
+      "stateId": 95,
+      "cityName": "Halls",
+      "duplicateIds": ["+126585", "+126586"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Tennessee",
+      "stateId": 95,
+      "cityName": "Oak Grove",
+      "duplicateIds": ["+126722", "+126723"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Tennessee",
+      "stateId": 95,
+      "cityName": "Walnut Grove",
+      "duplicateIds": ["+126860", "+126861"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Agua Dulce",
+      "duplicateIds": ["+126899", "+126900"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Chula Vista",
+      "duplicateIds": ["+127186", "+127187", "+127188"],
+      "totalOccurrences": 3
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "El Cenizo",
+      "duplicateIds": ["+127358", "+127359"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Hilltop",
+      "duplicateIds": ["+127594", "+127595"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Lago Vista",
+      "duplicateIds": ["+127730", "+127731"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Lakeside",
+      "duplicateIds": ["+127755", "+127756"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Lindsay",
+      "duplicateIds": ["+127824", "+127825"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Loma Linda East",
+      "duplicateIds": ["+127846", "+127847"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Los Ebanos",
+      "duplicateIds": ["+127869", "+127870"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Los Fresnos",
+      "duplicateIds": ["+127871", "+127872"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Mesquite",
+      "duplicateIds": ["+127956", "+127957"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Oak Ridge",
+      "duplicateIds": ["+128082", "+128083"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Palmer",
+      "duplicateIds": ["+128124", "+128125"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Pinehurst",
+      "duplicateIds": ["+128173", "+128174"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Rancho Viejo",
+      "duplicateIds": ["+128257", "+128258"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Reno",
+      "duplicateIds": ["+128282", "+128283"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "St. Paul",
+      "duplicateIds": ["+128356", "+128357"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "San Juan",
+      "duplicateIds": ["+128387", "+128388"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Santa Anna",
+      "duplicateIds": ["+128397", "+128398"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Santa Rosa",
+      "duplicateIds": ["+128405", "+128406"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Texas",
+      "stateId": 96,
+      "cityName": "Sunset",
+      "duplicateIds": ["+128530", "+128531"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Utah",
+      "stateId": 97,
+      "cityName": "Enterprise",
+      "duplicateIds": ["+128834", "+128835"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Virginia",
+      "stateId": 99,
+      "cityName": "Belle Haven",
+      "duplicateIds": ["+129308", "+129309"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Virginia",
+      "stateId": 99,
+      "cityName": "Bull Run",
+      "duplicateIds": ["+129360", "+129361"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Virginia",
+      "stateId": 99,
+      "cityName": "Rose Hill",
+      "duplicateIds": ["+129819", "+129820"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Virginia",
+      "stateId": 99,
+      "cityName": "Wakefield",
+      "duplicateIds": ["+129930", "+129931"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Virginia",
+      "stateId": 99,
+      "cityName": "Woodlawn",
+      "duplicateIds": ["+129960", "+129961"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Washington",
+      "stateId": 100,
+      "cityName": "Clear Lake",
+      "duplicateIds": ["+130077", "+130078"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Washington",
+      "stateId": 100,
+      "cityName": "Fairwood",
+      "duplicateIds": ["+130157", "+130158"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wisconsin",
+      "stateId": 102,
+      "cityName": "Pewaukee",
+      "duplicateIds": ["+131610", "+131611"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wisconsin",
+      "stateId": 102,
+      "cityName": "Seymour",
+      "duplicateIds": ["+131698", "+131699"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wisconsin",
+      "stateId": 102,
+      "cityName": "Superior",
+      "duplicateIds": ["+131748", "+131749"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wisconsin",
+      "stateId": 102,
+      "cityName": "Turtle Lake",
+      "duplicateIds": ["+131771", "+131772"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wisconsin",
+      "stateId": 102,
+      "cityName": "Waukesha",
+      "duplicateIds": ["+131797", "+131798"],
+      "totalOccurrences": 2
+    },
+    {
+      "country": "United States",
+      "countryId": "US",
+      "state": "Wyoming",
+      "stateId": 103,
+      "cityName": "Mountain View",
+      "duplicateIds": ["+131985", "+131986"],
+      "totalOccurrences": 2
+    }
+  ]
+}
