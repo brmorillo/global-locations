@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.3](https://github.com/brmorillo/global-locations/compare/v4.0.0...v4.0.3) (2025-12-19)
+
+
+### Bug Fixes
+
+* remove 182 duplicate city entries from US states ([d2218d3](https://github.com/brmorillo/global-locations/commit/d2218d34917f7e00a2bfe9de23a9ed3c047ed9bc))
+
 ### [4.0.2](https://github.com/brmorillo/global-locations/compare/v4.0.0...v4.0.2) (2025-12-19)
 
 
