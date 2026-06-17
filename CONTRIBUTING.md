@@ -101,4 +101,4 @@ Maintainers own the release; do not hand-edit the version in `package.json`.
 ## License
 
 By contributing you agree your contributions are licensed under the project's
-MIT license.
+LGPL-3.0-only license.

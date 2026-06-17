@@ -43,7 +43,7 @@
     "location-data"
   ],
   "author": "Bruno Morillo <bruno@rmorillo.com> (https://github.com/brmorillo)",
-  "license": "MIT",
+  "license": "LGPL-3.0-only",
   "private": false,
   "dependencies": {
     "@brmorillo/utils": "14.1.1"

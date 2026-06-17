@@ -6,7 +6,7 @@
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@brmorillo/global-locations?label=minzipped)](https://bundlephobia.com/package/@brmorillo/global-locations)
 [![Node.js](https://img.shields.io/node/v/@brmorillo/global-locations?color=339933)](https://nodejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178c6.svg)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: LGPL-3.0](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
 Library for accessing global location data such as countries, states, and cities.
 
@@ -90,4 +90,4 @@ bun run build         # CJS + ESM + d.ts
 
 ## License
 
-MIT
+[LGPL-3.0-only](./LICENSE) © [Bruno Morillo](https://github.com/brmorillo)
