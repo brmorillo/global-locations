@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allowlist for test fixtures and documentation examples"
+paths = [
+  "tests/",
+  "examples/",
+  "docs/",
+  "CHANGELOG.md",
+  ".versionrc",
+]

@@ -1,6 +1,25 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [5.0.0](https://github.com/brmorillo/global-locations/compare/v4.0.3...v5.0.0) (2026-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** fixes:
+- tsconfig: moduleResolution Node -> bundler (node10 deprecated in TS6)
+- tsconfig: add ignoreDeprecations "6.0" (tsup dts injects deprecated baseUrl)
+- .prettierrc: endOfLine "auto" (CRLF/LF cross-platform under newer prettier)
+- jest: dedicated tsconfig.spec.json with types [jest,node] so TS6 + jest 30
+  resolve the test globals (describe/it/expect)
+
+Pipeline fully green: type-check + lint + 68 tests (100% stmt/func/lines,
+91.8% branches) + dual CJS/ESM/d.ts build.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+
+* **deps:** upgrade all dependencies to latest, including majors ([dc8b4d8](https://github.com/brmorillo/global-locations/commit/dc8b4d84e225a5fe78731ef280e5bea907be96f4))
 
 ### [4.0.3](https://github.com/brmorillo/global-locations/compare/v4.0.0...v4.0.3) (2025-12-19)
 
