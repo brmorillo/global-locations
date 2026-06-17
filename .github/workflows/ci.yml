@@ -34,6 +34,9 @@ jobs:
       - name: Lint
         run: bun run lint:ci
 
+      - name: Test (unit + integration, with coverage)
+        run: bun run test:ci
+
       - name: Build (CJS + ESM + d.ts)
         run: bun run build
 

@@ -21,6 +21,7 @@
 - [ ] Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `docs:`, …)
 - [ ] `bun run type-check` passes
 - [ ] `bun run lint:ci` passes (0 warnings)
+- [ ] `bun run test:ci` passes (68 tests green, coverage gates met)
 - [ ] `bun run build` passes with 0 warnings
 - [ ] No ESM-only runtime dependencies added
 

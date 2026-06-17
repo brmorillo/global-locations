@@ -217,7 +217,7 @@ export class Countries {
     if (!country || !('states' in country)) return false;
 
     // Using ArrayUtils.findSubset to check if any state has the matching ID
-    return country.states.some((state) => state.id === Number(stateId));
+    return (country.states ?? []).some((state) => state.id === Number(stateId));
   }
 
   /**
@@ -345,7 +345,7 @@ export class Countries {
   public static getCityById(cityId: number): City | undefined {
     // Using a more functional approach with flatMap and find
     const allCities = this.countries.flatMap((country) =>
-      country.states.flatMap((state) =>
+      (country.states ?? []).flatMap((state) =>
         state.cities.map((city) => ({ city, state, country })),
       ),
     );
@@ -373,7 +373,7 @@ export class Countries {
 
     // Using a more functional approach with flatMap and filter
     this.countries.forEach((country) => {
-      country.states.forEach((state) => {
+      (country.states ?? []).forEach((state) => {
         state.cities.forEach((city) => {
           const cityName = caseSensitive ? city.name : city.name.toLowerCase();
 
