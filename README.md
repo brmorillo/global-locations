@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dm/@brmorillo/global-locations.svg)](https://www.npmjs.com/package/@brmorillo/global-locations)
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@brmorillo/global-locations?label=minzipped)](https://bundlephobia.com/package/@brmorillo/global-locations)
 [![Node.js](https://img.shields.io/node/v/@brmorillo/global-locations?color=339933)](https://nodejs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178c6.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Library for accessing global location data such as countries, states, and cities.

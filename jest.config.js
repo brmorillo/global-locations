@@ -1,5 +1,7 @@
 const isCI = process.env.CI === 'true';
 
+const tsJest = ['ts-jest', { tsconfig: 'tsconfig.spec.json' }];
+
 /** @type {import('jest').Config} */
 module.exports = {
   preset: 'ts-jest',
@@ -9,13 +11,13 @@ module.exports = {
       displayName: 'unit',
       testMatch: ['<rootDir>/tests/unit/**/*.spec.ts'],
       testEnvironment: 'node',
-      transform: { '^.+\\.ts$': 'ts-jest' },
+      transform: { '^.+\\.ts$': tsJest },
     },
     {
       displayName: 'integration',
       testMatch: ['<rootDir>/tests/integration/**/*.int-spec.ts'],
       testEnvironment: 'node',
-      transform: { '^.+\\.ts$': 'ts-jest' },
+      transform: { '^.+\\.ts$': tsJest },
     },
     ...(isCI
       ? []
@@ -24,7 +26,7 @@ module.exports = {
             displayName: 'benchmark',
             testMatch: ['<rootDir>/tests/benchmark/**/*.bench.ts'],
             testEnvironment: 'node',
-            transform: { '^.+\\.ts$': 'ts-jest' },
+            transform: { '^.+\\.ts$': tsJest },
           },
         ]),
   ],
