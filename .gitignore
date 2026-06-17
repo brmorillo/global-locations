@@ -69,6 +69,11 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
+# Foreign lockfiles — bun.lock is authoritative for this project
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
 # Yarn Integrity file
 .yarn-integrity
 

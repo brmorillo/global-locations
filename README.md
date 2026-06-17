@@ -77,10 +77,16 @@ bun run test:coverage # coverage report
 bun run build         # CJS + ESM + d.ts
 ```
 
+## Documentation
+
+- [docs/README.md](./docs/README.md) — documentation index and data shapes.
+- [docs/countries/README.md](./docs/countries/README.md) — full `Countries` reference: every method, parameters, return values and examples.
+
 ## Contributing & security
 
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — setup, workflow, testing, release flow.
 - [SECURITY.md](./SECURITY.md) — supported versions and how to report a vulnerability.
+- [CLAUDE.md](./CLAUDE.md) — architecture, conventions and context for contributors/AI assistants.
 
 ## License
 
