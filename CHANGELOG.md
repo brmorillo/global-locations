@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.0.1](https://github.com/brmorillo/global-locations/compare/v5.0.0...v5.0.1) (2026-06-18)
+
+
+### Bug Fixes
+
+* exclude sourcemaps from the published package ([4208c6a](https://github.com/brmorillo/global-locations/commit/4208c6af2c15b56b17110acd53703a06ec03a71c))
+
+
+### Documentation
+
+* enrich README to match the @brmorillo/utils standard ([5a24324](https://github.com/brmorillo/global-locations/commit/5a2432437ab39eedbecc412955902e60c20368ee))
+
 ## [5.0.0](https://github.com/brmorillo/global-locations/compare/v4.0.3...v5.0.0) (2026-06-17)
 
 
