@@ -1,6 +1,6 @@
 {
   "name": "@brmorillo/global-locations",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Production-ready library for global location data — countries, states and cities behind one type-safe API. Dual CJS + ESM build.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
